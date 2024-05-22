@@ -49,6 +49,7 @@
 #include "mcc_generated_files/pin_manager.h"
 #include "mcc_generated_files/can1.h"
 #include "mcc_generated_files/delay.h"
+#include "mcc_generated_files/oc1.h"
 /*
                          Main application
  */
@@ -72,15 +73,15 @@ int main(void) {
     SYSTEM_Initialize();
     CAN1_TransmitEnable();
     CAN1_ReceiveEnable();
-    CAN1_OperationModeSet(CAN_CONFIGURATION_MODE);
+   // CAN1_OperationModeSet(CAN_CONFIGURATION_MODE);
     // Imposta altre configurazioni specifiche qui
-    CAN1_OperationModeSet(CAN_LOOPBACK_MODE);
+   // CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE);
 
     uint8_t messageData[8] = {0x15, 0x2A, 0x37, 0x4C, 0x5B, 0x6E, 0x7D, 0x8F};
 
     while (1) {
         // Send a CAN message
-        //SendCANMessage(0x123, messageData, sizeof(messageData));
+        SendCANMessage(0x21, messageData, sizeof(messageData));
             // Check if a message has been received
             if (CAN1_ReceivedMessageCountGet() > 0) {
                 CAN_MSG_OBJ receivedMsg;
@@ -89,9 +90,7 @@ int main(void) {
 
                 if (CAN1_Receive(&receivedMsg)) {
                     if (receivedMsg.msgId == 0x123) {
-                        led3_Toggle();  // Turn on LED3 on receiving the message
-                    } else {
-                        led2_Toggle();   // Turn off LED3 if the ID doesn't match
+                        OC1_PrimaryValueSet(receivedMsg.data[0]);
                     }
                 }
             }

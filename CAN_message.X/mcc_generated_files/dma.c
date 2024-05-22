@@ -52,10 +52,10 @@ void DMA_Initialize(void)
 { 
     // Initialize channels which are enabled    
 
-    // AMODE Peripheral Indirect Addressing mode; CHEN disabled; DIR Reads from peripheral address, writes to RAM address; HALF Initiates interrupt when all of the data has been moved; SIZE 16 bit; NULLW disabled; MODE Continuous, Ping-Pong modes are disabled; 
-    DMA0CON= 0x20 & 0x7FFF; //Enable DMA Channel later;
-    // FORCE disabled; IRQSEL CAN1 RX; 
-    DMA0REQ= 0x22;
+    // AMODE Peripheral Indirect Addressing mode; CHEN disabled; DIR Reads from RAM address, writes to peripheral address; HALF Initiates interrupt when all of the data has been moved; SIZE 16 bit; NULLW disabled; MODE Continuous, Ping-Pong modes are disabled; 
+    DMA0CON= 0x2020 & 0x7FFF; //Enable DMA Channel later;
+    // FORCE disabled; IRQSEL CAN1 TX; 
+    DMA0REQ= 0x46;
     // STA 0; 
     DMA0STAH= 0x00;
     // STA 4096; 
@@ -72,10 +72,10 @@ void DMA_Initialize(void)
     IFS0bits.DMA0IF = false;
     // Enabling Channel 0 Interrupt
 
-    // AMODE Peripheral Indirect Addressing mode; CHEN disabled; SIZE 16 bit; DIR Reads from RAM address, writes to peripheral address; NULLW disabled; HALF Initiates interrupt when all of the data has been moved; MODE Continuous, Ping-Pong modes are disabled; 
-    DMA1CON= 0x2020 & 0x7FFF; //Enable DMA Channel later;
-    // FORCE disabled; IRQSEL CAN1 TX; 
-    DMA1REQ= 0x46;
+    // AMODE Peripheral Indirect Addressing mode; CHEN disabled; SIZE 16 bit; DIR Reads from peripheral address, writes to RAM address; NULLW disabled; HALF Initiates interrupt when all of the data has been moved; MODE Continuous, Ping-Pong modes are disabled; 
+    DMA1CON= 0x20 & 0x7FFF; //Enable DMA Channel later;
+    // FORCE disabled; IRQSEL CAN1 RX; 
+    DMA1REQ= 0x22;
     // STA 0; 
     DMA1STAH= 0x00;
     // STA 4096; 

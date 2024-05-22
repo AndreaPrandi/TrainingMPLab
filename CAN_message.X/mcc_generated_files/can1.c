@@ -49,8 +49,8 @@
 #include "can1.h"
 #include "dma.h"
 
-#define CAN1_TX_DMA_CHANNEL DMA_CHANNEL_1
-#define CAN1_RX_DMA_CHANNEL DMA_CHANNEL_0
+#define CAN1_TX_DMA_CHANNEL DMA_CHANNEL_0
+#define CAN1_RX_DMA_CHANNEL DMA_CHANNEL_1
 
 /* Valid options are 4, 6, 8, 12, 16, 24, or 32. */
 #define CAN1_MESSAGE_BUFFERS         32

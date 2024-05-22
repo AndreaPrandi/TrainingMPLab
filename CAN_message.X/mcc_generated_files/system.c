@@ -65,7 +65,7 @@
 #pragma config POSCMD = HS    //Primary Oscillator Mode Select Bits->HS Crystal Oscillator mode
 #pragma config OSCIOFNC = ON    //OSC2 Pin I/O Function Enable Bit->OSC2 is general purpose digital I/O pin
 #pragma config IOL1WAY = ON    //Peripheral Pin Select Configuration Bit->Allow Only One reconfiguration
-#pragma config FCKSM = CSDCMD    //Clock Switching Mode Bits->Both Clock Switching and Fail-safe Clock Monitor are disabled
+#pragma config FCKSM = CSECMD    //Clock Switching Mode Bits->Clock Switching is enabled,Fail-safe Clock Monitor is disabled
 #pragma config PLLKEN = ON    //PLL Lock Enable Bit->Clock switch to PLL source will wait until the PLL lock signal is valid
 
 // FWDT
@@ -109,18 +109,24 @@
 #include "system.h"
 #include "system_types.h"
 #include "dma.h"
-#include "delay.h"
+#include "can1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "can1.h"
+#include "oc1.h"
+#include "tmr2.h"
+#include "tmr1.h"
+#include "delay.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    CLOCK_Initialize();
     INTERRUPT_Initialize();
+    CLOCK_Initialize();
+    OC1_Initialize();
     CAN1_Initialize();
+    TMR2_Initialize();
     DMA_Initialize();
+    TMR1_Initialize();
     INTERRUPT_GlobalEnable();
     SYSTEM_CORCONModeOperatingSet(CORCON_MODE_PORVALUES);
 }

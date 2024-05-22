@@ -22,6 +22,10 @@
         <itemPath>mcc_generated_files/can_types.h</itemPath>
         <itemPath>mcc_generated_files/can_module_features.h</itemPath>
         <itemPath>mcc_generated_files/delay.h</itemPath>
+        <itemPath>mcc_generated_files/tmr2.h</itemPath>
+        <itemPath>mcc_generated_files/oc1.h</itemPath>
+        <itemPath>mcc_generated_files/tmr1.h</itemPath>
+        <itemPath>global.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -53,8 +57,12 @@
         <itemPath>mcc_generated_files/dma.c</itemPath>
         <itemPath>mcc_generated_files/system.c</itemPath>
         <itemPath>mcc_generated_files/delay.c</itemPath>
+        <itemPath>mcc_generated_files/tmr2.c</itemPath>
+        <itemPath>mcc_generated_files/oc1.c</itemPath>
+        <itemPath>mcc_generated_files/tmr1.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
+      <itemPath>global.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -233,6 +241,9 @@
       <PKOBSKDEPlatformTool>
         <property key="firmware.download.all" value="false"/>
       </PKOBSKDEPlatformTool>
+      <Tool>
+        <property key="firmware.download.all" value="false"/>
+      </Tool>
     </conf>
   </confs>
 </configurationDescriptor>

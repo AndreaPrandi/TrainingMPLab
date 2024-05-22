@@ -48,14 +48,14 @@
 
 void CLOCK_Initialize(void)
 {
-    // FRCDIV FRC/2; PLLPRE 2; DOZE 1:8; PLLPOST 1:2; DOZEN disabled; ROI disabled; 
-    CLKDIV = 0x3100;
+    // FRCDIV FRC/2; PLLPRE 3; DOZE 1:8; PLLPOST 1:8; DOZEN disabled; ROI disabled; 
+    CLKDIV = 0x31C1;
     // TUN Center frequency; 
     OSCTUN = 0x00;
     // ROON disabled; ROSEL FOSC; RODIV 0; ROSSLP disabled; 
     REFOCON = 0x00;
-    // PLLDIV 50; 
-    PLLFBD = 0x32;
+    // PLLDIV 58; 
+    PLLFBD = 0x3A;
     // AD1MD enabled; PWMMD enabled; T3MD enabled; T4MD enabled; T1MD enabled; U2MD enabled; T2MD enabled; U1MD enabled; SPI2MD enabled; SPI1MD enabled; C1MD enabled; T5MD enabled; I2C1MD enabled; 
     PMD1 = 0x00;
     // IC4MD enabled; IC3MD enabled; OC1MD enabled; IC2MD enabled; OC2MD enabled; IC1MD enabled; OC3MD enabled; OC4MD enabled; 
