@@ -74,8 +74,8 @@ void OC1_Initialize (void)
     OC1CON2 = 0x01;
     // OC1RS 100; 
     OC1RS = 0x64;
-    // OC1R 16; 
-    OC1R = 0x10;
+    // OC1R 10; 
+    OC1R = 0x0A;
 	
     gOC1Mode = OC1CON1bits.OCM;
 }

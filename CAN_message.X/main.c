@@ -50,6 +50,9 @@
 #include "mcc_generated_files/can1.h"
 #include "mcc_generated_files/delay.h"
 #include "mcc_generated_files/oc1.h"
+#include "global.h"
+#include "mcc_generated_files/tmr1.h"
+
 /*
                          Main application
  */
@@ -75,13 +78,14 @@ int main(void) {
     CAN1_ReceiveEnable();
    // CAN1_OperationModeSet(CAN_CONFIGURATION_MODE);
     // Imposta altre configurazioni specifiche qui
-   // CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE);
-
-    uint8_t messageData[8] = {0x15, 0x2A, 0x37, 0x4C, 0x5B, 0x6E, 0x7D, 0x8F};
+   //CAN1_OperationModeSet(CAN_INTERNAL_LOOPBACK_MODE);
+    TMR1_Start();
+    TMR2_Start();
+    uint8_t messageData[1] = {0};
 
     while (1) {
         // Send a CAN message
-        SendCANMessage(0x21, messageData, sizeof(messageData));
+      
             // Check if a message has been received
             if (CAN1_ReceivedMessageCountGet() > 0) {
                 CAN_MSG_OBJ receivedMsg;
@@ -90,7 +94,10 @@ int main(void) {
 
                 if (CAN1_Receive(&receivedMsg)) {
                     if (receivedMsg.msgId == 0x123) {
+                        messageData[0]=receivedData[0];
+                        SendCANMessage(12, messageData, sizeof(messageData));  // Invia il messaggio CAN
                         OC1_PrimaryValueSet(receivedMsg.data[0]);
+                        
                     }
                 }
             }
@@ -98,7 +105,11 @@ int main(void) {
                 led2_Toggle();   // Turn off LED3 if the ID doesn't match
 
             }
-        DELAY_milliseconds(1000);
+        if (TMR1_GetElapsedThenClear()) {
+           SendCANMessage(12, messageData, sizeof(messageData));  // Invia il messaggio CAN
+        }
+
+        
     }
         
     return 0;

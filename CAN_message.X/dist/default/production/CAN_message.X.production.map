@@ -30,8 +30,8 @@ Command:
   build/default/production/mcc_generated_files/delay.o \
   build/default/production/mcc_generated_files/tmr2.o \
   build/default/production/mcc_generated_files/oc1.o \
-  build/default/production/main.o \
   build/default/production/mcc_generated_files/tmr1.o \
+  build/default/production/main.o \
   build/default/production/global.o \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
@@ -102,13 +102,13 @@ Default Scalar Model: Small
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200               0x244           0x366  (870)
-.text                        0x444              0x108c          0x18d2  (6354)
-.dinit                      0x14d0                0x34            0x4e  (78)
-.init.delay32               0x1504                0x1c            0x2a  (42)
-.text                       0x1520                0x1e            0x2d  (45)
+.text                        0x200               0x27e           0x3bd  (957)
+.text                        0x47e              0x10a0          0x18f0  (6384)
+.dinit                      0x151e                0x3a            0x57  (87)
+.init.delay32               0x1558                0x1c            0x2a  (42)
+.text                       0x1574                0x28            0x3c  (60)
 
-                 Total "program" memory used (bytes):         0x1cdd  (7389) 2%
+                 Total "program" memory used (bytes):         0x1d6a  (7530) 2%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x4000]
@@ -117,11 +117,11 @@ section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
 .nbss                       0x1000                   0             0x2  (2)
 .ndata                      0x1002                   0             0x2  (2)
-.nbss                       0x1004                   0             0x2  (2)
-.bss                        0x1006                   0            0x2c  (44)
+.nbss                       0x1004                   0             0x4  (4)
+.bss                        0x1008                   0            0x2c  (44)
 _000000000664DA00664dfad1    0x1200                   0           0x200  (512)
 
-                 Total "data" memory used (bytes):          0x232  (562) 3%
+                 Total "data" memory used (bytes):          0x234  (564) 3%
 
 
 Dynamic Memory Usage
@@ -138,11 +138,13 @@ Info: Project is using a large data memory model when small data memory model is
 
 External Symbols in Data Memory (by address):
 
-                    0x1026                  _globalMessageData
+                    0x1006                  _TMR1_InterruptHandler
+                    0x1028                  _globalMessageData
 
 External Symbols in Data Memory (by name):
 
-                    0x1026                  _globalMessageData
+                    0x1006                  _TMR1_InterruptHandler
+                    0x1028                  _globalMessageData
 
 External Symbols in Program Memory (by address):
 
@@ -150,181 +152,183 @@ External Symbols in Program Memory (by address):
                   0x00023c                  __psv_init
                   0x000248                  __data_init_extended
                   0x000248                  __data_init
-                  0x0002fe                  __C1Interrupt
-                  0x000330                  __OscillatorFail
-                  0x000350                  __StackError
-                  0x000372                  __AddressError
-                  0x000392                  __MathError
-                  0x0003b2                  __DMACError
-                  0x0003d2                  __HardTrapError
-                  0x0003f2                  __SoftTrapError
-                  0x00043e                  __DefaultInterrupt
-                  0x000838                  _CAN1_Initialize
-                  0x00093e                  _CAN1_TransmitEnable
-                  0x000958                  _CAN1_ReceiveEnable
-                  0x000972                  _CAN1_OperationModeSet
-                  0x0009be                  _CAN1_OperationModeGet
-                  0x0009cc                  _CAN1_Transmit
-                  0x000a5c                  _CAN1_Receive
-                  0x000ae8                  _CAN1_IsBusOff
-                  0x000b00                  _CAN1_IsRXErrorPassive
-                  0x000b18                  _CAN1_IsRxErrorWarning
-                  0x000b30                  _CAN1_IsRxErrorActive
-                  0x000b4c                  _CAN1_IsTXErrorPassive
-                  0x000b64                  _CAN1_IsTxErrorWarning
-                  0x000b7c                  _CAN1_IsTxErrorActive
-                  0x000b98                  _CAN1_ReceivedMessageCountGet
-                  0x000bfe                  _CAN1_Sleep
-                  0x000c26                  _CAN1_SetBusWakeUpActivityInterruptHandler
-                  0x000c32                  _CAN1_transmit
-                  0x000cea                  _CAN1_receive
-                  0x000d90                  _CAN1_isBusOff
-                  0x000da8                  _CAN1_isRXErrorPassive
-                  0x000dc0                  _CAN1_isTXErrorPassive
-                  0x000dd8                  _CAN1_messagesInBuffer
-                  0x000e3e                  _CAN1_sleep
-                  0x000e60                  _RESET_GetCause
-                  0x000f6c                  _RESET_CauseClearAll
-                  0x000f74                  _OC1_Initialize
-                  0x000f9a                  _OC1_Tasks
-                  0x000fac                  _OC1_Start
-                  0x000fc6                  _OC1_Stop
-                  0x000fd4                  _OC1_SecondaryValueSet
-                  0x000fe0                  _OC1_PrimaryValueSet
-                  0x000fec                  _OC1_IsCompareCycleComplete
-                  0x001004                  _OC1_FaultStatusGet
-                  0x00102a                  _OC1_FaultStatusClear
-                  0x001040                  _OC1_ManualTriggerSet
-                  0x001048                  _OC1_TriggerStatusGet
-                  0x001060                  _OC1_TriggerStatusClear
-                  0x001068                  _DMA_Initialize
-                  0x0010dc                  _DMA_Channel0_Tasks
-                  0x0010f4                  _DMA_Channel1_Tasks
-                  0x00110e                  _DMA_Channel2_Tasks
-                  0x001128                  _DMA_Channel3_Tasks
-                  0x00113a                  _SendCANMessage
-                  0x00118c                  _main
-                  0x0011f6                  _TMR2_Initialize
-                  0x00120c                  _TMR2_Tasks_16BitOperation
-                  0x00122e                  _TMR2_Period16BitSet
-                  0x001240                  _TMR2_Period16BitGet
-                  0x001248                  _TMR2_Counter16BitSet
-                  0x00125a                  _TMR2_Counter16BitGet
-                  0x001262                  _TMR2_Start
-                  0x001270                  _TMR2_Stop
-                  0x001278                  _TMR2_GetElapsedThenClear
-                  0x001290                  _TMR2_SoftwareCounterGet
-                  0x00129c                  _TMR2_SoftwareCounterClear
-                  0x0012a8                  _TMR1_Initialize
-                  0x0012be                  _TMR1_Tasks_16BitOperation
-                  0x0012de                  _TMR1_Period16BitSet
-                  0x0012f0                  _TMR1_Period16BitGet
-                  0x0012f8                  _TMR1_Counter16BitSet
-                  0x00130a                  _TMR1_Counter16BitGet
-                  0x001312                  _TMR1_Start
-                  0x001320                  _TMR1_Stop
-                  0x001328                  _TMR1_GetElapsedThenClear
-                  0x001340                  _TMR1_SoftwareCounterGet
-                  0x00134c                  _TMR1_SoftwareCounterClear
-                  0x001358                  _PIN_MANAGER_Initialize
-                  0x001404                  _DELAY_milliseconds
-                  0x001426                  _DELAY_microseconds
-                  0x00145a                  _CLOCK_Initialize
-                  0x0014b4                  _SYSTEM_Initialize
-                  0x001504                  ___delay32
-                  0x001538                  _INTERRUPT_Initialize
+                  0x000302                  __C1Interrupt
+                  0x000334                  __OscillatorFail
+                  0x000354                  __StackError
+                  0x000376                  __AddressError
+                  0x000396                  __MathError
+                  0x0003b6                  __DMACError
+                  0x0003d6                  __HardTrapError
+                  0x0003f6                  __SoftTrapError
+                  0x000442                  __T1Interrupt
+                  0x000478                  __DefaultInterrupt
+                  0x000872                  _CAN1_Initialize
+                  0x000978                  _CAN1_TransmitEnable
+                  0x000992                  _CAN1_ReceiveEnable
+                  0x0009ac                  _CAN1_OperationModeSet
+                  0x0009f8                  _CAN1_OperationModeGet
+                  0x000a06                  _CAN1_Transmit
+                  0x000a96                  _CAN1_Receive
+                  0x000b22                  _CAN1_IsBusOff
+                  0x000b3a                  _CAN1_IsRXErrorPassive
+                  0x000b52                  _CAN1_IsRxErrorWarning
+                  0x000b6a                  _CAN1_IsRxErrorActive
+                  0x000b86                  _CAN1_IsTXErrorPassive
+                  0x000b9e                  _CAN1_IsTxErrorWarning
+                  0x000bb6                  _CAN1_IsTxErrorActive
+                  0x000bd2                  _CAN1_ReceivedMessageCountGet
+                  0x000c38                  _CAN1_Sleep
+                  0x000c60                  _CAN1_SetBusWakeUpActivityInterruptHandler
+                  0x000c6c                  _CAN1_transmit
+                  0x000d24                  _CAN1_receive
+                  0x000dca                  _CAN1_isBusOff
+                  0x000de2                  _CAN1_isRXErrorPassive
+                  0x000dfa                  _CAN1_isTXErrorPassive
+                  0x000e12                  _CAN1_messagesInBuffer
+                  0x000e78                  _CAN1_sleep
+                  0x000e9a                  _RESET_GetCause
+                  0x000fa6                  _RESET_CauseClearAll
+                  0x000fae                  _OC1_Initialize
+                  0x000fd4                  _OC1_Tasks
+                  0x000fe6                  _OC1_Start
+                  0x001000                  _OC1_Stop
+                  0x00100e                  _OC1_SecondaryValueSet
+                  0x00101a                  _OC1_PrimaryValueSet
+                  0x001026                  _OC1_IsCompareCycleComplete
+                  0x00103e                  _OC1_FaultStatusGet
+                  0x001064                  _OC1_FaultStatusClear
+                  0x00107a                  _OC1_ManualTriggerSet
+                  0x001082                  _OC1_TriggerStatusGet
+                  0x00109a                  _OC1_TriggerStatusClear
+                  0x0010a2                  _DMA_Initialize
+                  0x001116                  _DMA_Channel0_Tasks
+                  0x00112e                  _DMA_Channel1_Tasks
+                  0x001148                  _DMA_Channel2_Tasks
+                  0x001162                  _DMA_Channel3_Tasks
+                  0x001174                  _SendCANMessage
+                  0x0011c6                  _main
+                  0x00123c                  _TMR1_Initialize
+                  0x001260                  _TMR1_Period16BitSet
+                  0x001272                  _TMR1_Period16BitGet
+                  0x00127a                  _TMR1_Counter16BitSet
+                  0x00128c                  _TMR1_Counter16BitGet
+                  0x00129a                  _TMR1_SetInterruptHandler
+                  0x0012aa                  _TMR1_Start
+                  0x0012ba                  _TMR1_Stop
+                  0x0012c4                  _TMR1_GetElapsedThenClear
+                  0x0012dc                  _TMR1_SoftwareCounterGet
+                  0x0012e8                  _TMR1_SoftwareCounterClear
+                  0x0012f4                  _TMR2_Initialize
+                  0x00130a                  _TMR2_Tasks_16BitOperation
+                  0x00132c                  _TMR2_Period16BitSet
+                  0x00133e                  _TMR2_Period16BitGet
+                  0x001346                  _TMR2_Counter16BitSet
+                  0x001358                  _TMR2_Counter16BitGet
+                  0x001360                  _TMR2_Start
+                  0x00136e                  _TMR2_Stop
+                  0x001376                  _TMR2_GetElapsedThenClear
+                  0x00138e                  _TMR2_SoftwareCounterGet
+                  0x00139a                  _TMR2_SoftwareCounterClear
+                  0x0013a6                  _PIN_MANAGER_Initialize
+                  0x001452                  _DELAY_milliseconds
+                  0x001474                  _DELAY_microseconds
+                  0x0014a8                  _CLOCK_Initialize
+                  0x001502                  _SYSTEM_Initialize
+                  0x001558                  ___delay32
+                  0x00158c                  _INTERRUPT_Initialize
                   0x02ab80                  __FSEC.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x000838                  _CAN1_Initialize
-                  0x000ae8                  _CAN1_IsBusOff
-                  0x000b00                  _CAN1_IsRXErrorPassive
-                  0x000b30                  _CAN1_IsRxErrorActive
-                  0x000b18                  _CAN1_IsRxErrorWarning
-                  0x000b4c                  _CAN1_IsTXErrorPassive
-                  0x000b7c                  _CAN1_IsTxErrorActive
-                  0x000b64                  _CAN1_IsTxErrorWarning
-                  0x0009be                  _CAN1_OperationModeGet
-                  0x000972                  _CAN1_OperationModeSet
-                  0x000a5c                  _CAN1_Receive
-                  0x000958                  _CAN1_ReceiveEnable
-                  0x000b98                  _CAN1_ReceivedMessageCountGet
-                  0x000c26                  _CAN1_SetBusWakeUpActivityInterruptHandler
-                  0x000bfe                  _CAN1_Sleep
-                  0x0009cc                  _CAN1_Transmit
-                  0x00093e                  _CAN1_TransmitEnable
-                  0x000d90                  _CAN1_isBusOff
-                  0x000da8                  _CAN1_isRXErrorPassive
-                  0x000dc0                  _CAN1_isTXErrorPassive
-                  0x000dd8                  _CAN1_messagesInBuffer
-                  0x000cea                  _CAN1_receive
-                  0x000e3e                  _CAN1_sleep
-                  0x000c32                  _CAN1_transmit
-                  0x00145a                  _CLOCK_Initialize
-                  0x001426                  _DELAY_microseconds
-                  0x001404                  _DELAY_milliseconds
-                  0x0010dc                  _DMA_Channel0_Tasks
-                  0x0010f4                  _DMA_Channel1_Tasks
-                  0x00110e                  _DMA_Channel2_Tasks
-                  0x001128                  _DMA_Channel3_Tasks
-                  0x001068                  _DMA_Initialize
-                  0x001538                  _INTERRUPT_Initialize
-                  0x00102a                  _OC1_FaultStatusClear
-                  0x001004                  _OC1_FaultStatusGet
-                  0x000f74                  _OC1_Initialize
-                  0x000fec                  _OC1_IsCompareCycleComplete
-                  0x001040                  _OC1_ManualTriggerSet
-                  0x000fe0                  _OC1_PrimaryValueSet
-                  0x000fd4                  _OC1_SecondaryValueSet
-                  0x000fac                  _OC1_Start
-                  0x000fc6                  _OC1_Stop
-                  0x000f9a                  _OC1_Tasks
-                  0x001060                  _OC1_TriggerStatusClear
-                  0x001048                  _OC1_TriggerStatusGet
-                  0x001358                  _PIN_MANAGER_Initialize
-                  0x000f6c                  _RESET_CauseClearAll
-                  0x000e60                  _RESET_GetCause
-                  0x0014b4                  _SYSTEM_Initialize
-                  0x00113a                  _SendCANMessage
-                  0x00130a                  _TMR1_Counter16BitGet
-                  0x0012f8                  _TMR1_Counter16BitSet
-                  0x001328                  _TMR1_GetElapsedThenClear
-                  0x0012a8                  _TMR1_Initialize
-                  0x0012f0                  _TMR1_Period16BitGet
-                  0x0012de                  _TMR1_Period16BitSet
-                  0x00134c                  _TMR1_SoftwareCounterClear
-                  0x001340                  _TMR1_SoftwareCounterGet
-                  0x001312                  _TMR1_Start
-                  0x001320                  _TMR1_Stop
-                  0x0012be                  _TMR1_Tasks_16BitOperation
-                  0x00125a                  _TMR2_Counter16BitGet
-                  0x001248                  _TMR2_Counter16BitSet
-                  0x001278                  _TMR2_GetElapsedThenClear
-                  0x0011f6                  _TMR2_Initialize
-                  0x001240                  _TMR2_Period16BitGet
-                  0x00122e                  _TMR2_Period16BitSet
-                  0x00129c                  _TMR2_SoftwareCounterClear
-                  0x001290                  _TMR2_SoftwareCounterGet
-                  0x001262                  _TMR2_Start
-                  0x001270                  _TMR2_Stop
-                  0x00120c                  _TMR2_Tasks_16BitOperation
-                  0x000372                  __AddressError
-                  0x0002fe                  __C1Interrupt
-                  0x0003b2                  __DMACError
-                  0x00043e                  __DefaultInterrupt
+                  0x000872                  _CAN1_Initialize
+                  0x000b22                  _CAN1_IsBusOff
+                  0x000b3a                  _CAN1_IsRXErrorPassive
+                  0x000b6a                  _CAN1_IsRxErrorActive
+                  0x000b52                  _CAN1_IsRxErrorWarning
+                  0x000b86                  _CAN1_IsTXErrorPassive
+                  0x000bb6                  _CAN1_IsTxErrorActive
+                  0x000b9e                  _CAN1_IsTxErrorWarning
+                  0x0009f8                  _CAN1_OperationModeGet
+                  0x0009ac                  _CAN1_OperationModeSet
+                  0x000a96                  _CAN1_Receive
+                  0x000992                  _CAN1_ReceiveEnable
+                  0x000bd2                  _CAN1_ReceivedMessageCountGet
+                  0x000c60                  _CAN1_SetBusWakeUpActivityInterruptHandler
+                  0x000c38                  _CAN1_Sleep
+                  0x000a06                  _CAN1_Transmit
+                  0x000978                  _CAN1_TransmitEnable
+                  0x000dca                  _CAN1_isBusOff
+                  0x000de2                  _CAN1_isRXErrorPassive
+                  0x000dfa                  _CAN1_isTXErrorPassive
+                  0x000e12                  _CAN1_messagesInBuffer
+                  0x000d24                  _CAN1_receive
+                  0x000e78                  _CAN1_sleep
+                  0x000c6c                  _CAN1_transmit
+                  0x0014a8                  _CLOCK_Initialize
+                  0x001474                  _DELAY_microseconds
+                  0x001452                  _DELAY_milliseconds
+                  0x001116                  _DMA_Channel0_Tasks
+                  0x00112e                  _DMA_Channel1_Tasks
+                  0x001148                  _DMA_Channel2_Tasks
+                  0x001162                  _DMA_Channel3_Tasks
+                  0x0010a2                  _DMA_Initialize
+                  0x00158c                  _INTERRUPT_Initialize
+                  0x001064                  _OC1_FaultStatusClear
+                  0x00103e                  _OC1_FaultStatusGet
+                  0x000fae                  _OC1_Initialize
+                  0x001026                  _OC1_IsCompareCycleComplete
+                  0x00107a                  _OC1_ManualTriggerSet
+                  0x00101a                  _OC1_PrimaryValueSet
+                  0x00100e                  _OC1_SecondaryValueSet
+                  0x000fe6                  _OC1_Start
+                  0x001000                  _OC1_Stop
+                  0x000fd4                  _OC1_Tasks
+                  0x00109a                  _OC1_TriggerStatusClear
+                  0x001082                  _OC1_TriggerStatusGet
+                  0x0013a6                  _PIN_MANAGER_Initialize
+                  0x000fa6                  _RESET_CauseClearAll
+                  0x000e9a                  _RESET_GetCause
+                  0x001502                  _SYSTEM_Initialize
+                  0x001174                  _SendCANMessage
+                  0x00128c                  _TMR1_Counter16BitGet
+                  0x00127a                  _TMR1_Counter16BitSet
+                  0x0012c4                  _TMR1_GetElapsedThenClear
+                  0x00123c                  _TMR1_Initialize
+                  0x001272                  _TMR1_Period16BitGet
+                  0x001260                  _TMR1_Period16BitSet
+                  0x00129a                  _TMR1_SetInterruptHandler
+                  0x0012e8                  _TMR1_SoftwareCounterClear
+                  0x0012dc                  _TMR1_SoftwareCounterGet
+                  0x0012aa                  _TMR1_Start
+                  0x0012ba                  _TMR1_Stop
+                  0x001358                  _TMR2_Counter16BitGet
+                  0x001346                  _TMR2_Counter16BitSet
+                  0x001376                  _TMR2_GetElapsedThenClear
+                  0x0012f4                  _TMR2_Initialize
+                  0x00133e                  _TMR2_Period16BitGet
+                  0x00132c                  _TMR2_Period16BitSet
+                  0x00139a                  _TMR2_SoftwareCounterClear
+                  0x00138e                  _TMR2_SoftwareCounterGet
+                  0x001360                  _TMR2_Start
+                  0x00136e                  _TMR2_Stop
+                  0x00130a                  _TMR2_Tasks_16BitOperation
+                  0x000376                  __AddressError
+                  0x000302                  __C1Interrupt
+                  0x0003b6                  __DMACError
+                  0x000478                  __DefaultInterrupt
                   0x02ab80                  __FSEC.sec
-                  0x0003d2                  __HardTrapError
-                  0x000392                  __MathError
-                  0x000330                  __OscillatorFail
-                  0x0003f2                  __SoftTrapError
-                  0x000350                  __StackError
-                  0x001504                  ___delay32
+                  0x0003d6                  __HardTrapError
+                  0x000396                  __MathError
+                  0x000334                  __OscillatorFail
+                  0x0003f6                  __SoftTrapError
+                  0x000354                  __StackError
+                  0x000442                  __T1Interrupt
+                  0x001558                  ___delay32
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x00118c                  _main
+                  0x0011c6                  _main
 
 Memory Configuration
 
@@ -363,8 +367,8 @@ LOAD build/default/production/mcc_generated_files/system.o
 LOAD build/default/production/mcc_generated_files/delay.o
 LOAD build/default/production/mcc_generated_files/tmr2.o
 LOAD build/default/production/mcc_generated_files/oc1.o
-LOAD build/default/production/main.o
 LOAD build/default/production/mcc_generated_files/tmr1.o
+LOAD build/default/production/main.o
 LOAD build/default/production/global.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD p33EV256GM106
@@ -397,7 +401,7 @@ LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200        0x244
+.text             0x000200        0x27e
  *(.init)
  .init            0x000200         0x48 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_extendedep.o)
                   0x000200                  __resetPRI
@@ -408,29 +412,31 @@ LOAD c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libfx-elf.a
                   0x000248                  __data_init_extended
  *(.user_init)
  *(.handle)
- .handle          0x0002fa          0x4 jump_table
+ .handle          0x0002fa          0x8 jump_table
  *(.isr*)
- .isr.text        0x0002fe         0x32 build/default/production/mcc_generated_files/can1.o
-                  0x0002fe                  __C1Interrupt
+ .isr.text        0x000302         0x32 build/default/production/mcc_generated_files/can1.o
+                  0x000302                  __C1Interrupt
  .isrerror_handler
-                  0x000330        0x10e build/default/production/mcc_generated_files/traps.o
-                  0x000330                  __OscillatorFail
-                  0x000350                  __StackError
-                  0x000372                  __AddressError
-                  0x000392                  __MathError
-                  0x0003b2                  __DMACError
-                  0x0003d2                  __HardTrapError
-                  0x0003f2                  __SoftTrapError
- .isr             0x00043e          0x4 default_isr
-                  0x00043e                  __DefaultInterrupt
+                  0x000334        0x10e build/default/production/mcc_generated_files/traps.o
+                  0x000334                  __OscillatorFail
+                  0x000354                  __StackError
+                  0x000376                  __AddressError
+                  0x000396                  __MathError
+                  0x0003b6                  __DMACError
+                  0x0003d6                  __HardTrapError
+                  0x0003f6                  __SoftTrapError
+ .isr.text        0x000442         0x36 build/default/production/mcc_generated_files/tmr1.o
+                  0x000442                  __T1Interrupt
+ .isr             0x000478          0x4 default_isr
+                  0x000478                  __DefaultInterrupt
  *(.libc)
  *(.libm)
  *(.libdsp)
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x000442          0x2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt_start_mode_normalep.Meo)
-                  0x000442                  __crt_start_mode
-                  0x000442                  __crt_start_mode_normal
+                  0x00047c          0x2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt_start_mode_normalep.Meo)
+                  0x00047c                  __crt_start_mode
+                  0x00047c                  __crt_start_mode_normal
 
 usercode
  *(usercode)
@@ -482,61 +488,61 @@ __FALTREG
 .comment
  *(.comment)
 
-.debug_info       0x000000       0xad00
+.debug_info       0x000000       0xb0c7
  *(.debug_info)
  .debug_info      0x000000       0x4011 build/default/production/mcc_generated_files/can1.o
  .debug_info      0x004011        0xb16 build/default/production/mcc_generated_files/pin_manager.o
- .debug_info      0x004b27        0x166 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_info      0x004c8d        0x638 build/default/production/mcc_generated_files/traps.o
- .debug_info      0x0052c5        0x49a build/default/production/mcc_generated_files/reset.o
- .debug_info      0x00575f        0x2d6 build/default/production/mcc_generated_files/clock.o
- .debug_info      0x005a35       0x18b9 build/default/production/mcc_generated_files/dma.o
- .debug_info      0x0072ee       0x1a0a build/default/production/mcc_generated_files/system.o
- .debug_info      0x008cf8        0x1d4 build/default/production/mcc_generated_files/delay.o
- .debug_info      0x008ecc        0x6b1 build/default/production/mcc_generated_files/tmr2.o
- .debug_info      0x00957d        0x958 build/default/production/mcc_generated_files/oc1.o
- .debug_info      0x009ed5        0x616 build/default/production/main.o
- .debug_info      0x00a4eb        0x6b3 build/default/production/mcc_generated_files/tmr1.o
- .debug_info      0x00ab9e        0x162 build/default/production/global.o
+ .debug_info      0x004b27        0x33a build/default/production/mcc_generated_files/interrupt_manager.o
+ .debug_info      0x004e61        0x638 build/default/production/mcc_generated_files/traps.o
+ .debug_info      0x005499        0x49a build/default/production/mcc_generated_files/reset.o
+ .debug_info      0x005933        0x2d6 build/default/production/mcc_generated_files/clock.o
+ .debug_info      0x005c09       0x18b9 build/default/production/mcc_generated_files/dma.o
+ .debug_info      0x0074c2       0x1a0a build/default/production/mcc_generated_files/system.o
+ .debug_info      0x008ecc        0x1d4 build/default/production/mcc_generated_files/delay.o
+ .debug_info      0x0090a0        0x6b1 build/default/production/mcc_generated_files/tmr2.o
+ .debug_info      0x009751        0x958 build/default/production/mcc_generated_files/oc1.o
+ .debug_info      0x00a0a9        0x8be build/default/production/mcc_generated_files/tmr1.o
+ .debug_info      0x00a967        0x5fe build/default/production/main.o
+ .debug_info      0x00af65        0x162 build/default/production/global.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0xe08
+.debug_abbrev     0x000000        0xec4
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x29f build/default/production/mcc_generated_files/can1.o
  .debug_abbrev    0x00029f         0xc5 build/default/production/mcc_generated_files/pin_manager.o
- .debug_abbrev    0x000364         0x34 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_abbrev    0x000398        0x10d build/default/production/mcc_generated_files/traps.o
- .debug_abbrev    0x0004a5          0x1 build/default/production/mcc_generated_files/mcc.o
- .debug_abbrev    0x0004a6         0xf6 build/default/production/mcc_generated_files/reset.o
- .debug_abbrev    0x00059c         0x59 build/default/production/mcc_generated_files/clock.o
- .debug_abbrev    0x0005f5         0xda build/default/production/mcc_generated_files/dma.o
- .debug_abbrev    0x0006cf        0x13a build/default/production/mcc_generated_files/system.o
- .debug_abbrev    0x000809         0x67 build/default/production/mcc_generated_files/delay.o
- .debug_abbrev    0x000870        0x148 build/default/production/mcc_generated_files/tmr2.o
- .debug_abbrev    0x0009b8        0x14f build/default/production/mcc_generated_files/oc1.o
- .debug_abbrev    0x000b07        0x16a build/default/production/main.o
- .debug_abbrev    0x000c71        0x148 build/default/production/mcc_generated_files/tmr1.o
- .debug_abbrev    0x000db9         0x4f build/default/production/global.o
+ .debug_abbrev    0x000364         0xb4 build/default/production/mcc_generated_files/interrupt_manager.o
+ .debug_abbrev    0x000418        0x10d build/default/production/mcc_generated_files/traps.o
+ .debug_abbrev    0x000525          0x1 build/default/production/mcc_generated_files/mcc.o
+ .debug_abbrev    0x000526         0xf6 build/default/production/mcc_generated_files/reset.o
+ .debug_abbrev    0x00061c         0x59 build/default/production/mcc_generated_files/clock.o
+ .debug_abbrev    0x000675         0xda build/default/production/mcc_generated_files/dma.o
+ .debug_abbrev    0x00074f        0x13a build/default/production/mcc_generated_files/system.o
+ .debug_abbrev    0x000889         0x67 build/default/production/mcc_generated_files/delay.o
+ .debug_abbrev    0x0008f0        0x148 build/default/production/mcc_generated_files/tmr2.o
+ .debug_abbrev    0x000a38        0x14f build/default/production/mcc_generated_files/oc1.o
+ .debug_abbrev    0x000b87        0x18d build/default/production/mcc_generated_files/tmr1.o
+ .debug_abbrev    0x000d14        0x161 build/default/production/main.o
+ .debug_abbrev    0x000e75         0x4f build/default/production/global.o
 
-.debug_line       0x000000       0x124b
+.debug_line       0x000000       0x1348
  *(.debug_line)
  .debug_line      0x000000        0x340 build/default/production/mcc_generated_files/can1.o
  .debug_line      0x000340        0x158 build/default/production/mcc_generated_files/pin_manager.o
- .debug_line      0x000498         0x55 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_line      0x0004ed        0x16c build/default/production/mcc_generated_files/traps.o
- .debug_line      0x000659         0x1a build/default/production/mcc_generated_files/mcc.o
- .debug_line      0x000673        0x16f build/default/production/mcc_generated_files/reset.o
- .debug_line      0x0007e2        0x130 build/default/production/mcc_generated_files/clock.o
- .debug_line      0x000912        0x161 build/default/production/mcc_generated_files/dma.o
- .debug_line      0x000a73        0x172 build/default/production/mcc_generated_files/system.o
- .debug_line      0x000be5         0xa6 build/default/production/mcc_generated_files/delay.o
- .debug_line      0x000c8b        0x14e build/default/production/mcc_generated_files/tmr2.o
- .debug_line      0x000dd9        0x160 build/default/production/mcc_generated_files/oc1.o
- .debug_line      0x000f39        0x14f build/default/production/main.o
- .debug_line      0x001088        0x14e build/default/production/mcc_generated_files/tmr1.o
- .debug_line      0x0011d6         0x75 build/default/production/global.o
+ .debug_line      0x000498        0x130 build/default/production/mcc_generated_files/interrupt_manager.o
+ .debug_line      0x0005c8        0x16c build/default/production/mcc_generated_files/traps.o
+ .debug_line      0x000734         0x1a build/default/production/mcc_generated_files/mcc.o
+ .debug_line      0x00074e        0x16f build/default/production/mcc_generated_files/reset.o
+ .debug_line      0x0008bd        0x130 build/default/production/mcc_generated_files/clock.o
+ .debug_line      0x0009ed        0x161 build/default/production/mcc_generated_files/dma.o
+ .debug_line      0x000b4e        0x172 build/default/production/mcc_generated_files/system.o
+ .debug_line      0x000cc0         0xa6 build/default/production/mcc_generated_files/delay.o
+ .debug_line      0x000d66        0x14e build/default/production/mcc_generated_files/tmr2.o
+ .debug_line      0x000eb4        0x160 build/default/production/mcc_generated_files/oc1.o
+ .debug_line      0x001014        0x16d build/default/production/mcc_generated_files/tmr1.o
+ .debug_line      0x001181        0x152 build/default/production/main.o
+ .debug_line      0x0012d3         0x75 build/default/production/global.o
 
-.debug_frame      0x000000        0xcbe
+.debug_frame      0x000000        0xd16
  *(.debug_frame)
  .debug_frame     0x000000        0x368 build/default/production/mcc_generated_files/can1.o
  .debug_frame     0x000368         0x2e build/default/production/mcc_generated_files/pin_manager.o
@@ -549,21 +555,22 @@ __FALTREG
  .debug_frame     0x000864         0x48 build/default/production/mcc_generated_files/delay.o
  .debug_frame     0x0008ac        0x132 build/default/production/mcc_generated_files/tmr2.o
  .debug_frame     0x0009de        0x166 build/default/production/mcc_generated_files/oc1.o
- .debug_frame     0x000b44         0x48 build/default/production/main.o
- .debug_frame     0x000b8c        0x132 build/default/production/mcc_generated_files/tmr1.o
+ .debug_frame     0x000b44        0x18a build/default/production/mcc_generated_files/tmr1.o
+ .debug_frame     0x000cce         0x48 build/default/production/main.o
 
-.debug_str        0x000000        0x72c
+.debug_str        0x000000        0x754
  *(.debug_str)
  .debug_str       0x000000        0x33a build/default/production/mcc_generated_files/can1.o
  .debug_str       0x00033a         0x20 build/default/production/mcc_generated_files/pin_manager.o
- .debug_str       0x00035a         0x24 build/default/production/mcc_generated_files/traps.o
- .debug_str       0x00037e         0x17 build/default/production/mcc_generated_files/reset.o
- .debug_str       0x000395        0x199 build/default/production/mcc_generated_files/dma.o
- .debug_str       0x00052e        0x1a5 build/default/production/mcc_generated_files/system.o
- .debug_str       0x0006d3         0x13 build/default/production/mcc_generated_files/tmr2.o
- .debug_str       0x0006e6         0x2a build/default/production/mcc_generated_files/oc1.o
- .debug_str       0x000710          0x9 build/default/production/main.o
- .debug_str       0x000719         0x13 build/default/production/mcc_generated_files/tmr1.o
+ .debug_str       0x00035a          0x9 build/default/production/mcc_generated_files/interrupt_manager.o
+ .debug_str       0x000363         0x24 build/default/production/mcc_generated_files/traps.o
+ .debug_str       0x000387         0x17 build/default/production/mcc_generated_files/reset.o
+ .debug_str       0x00039e        0x199 build/default/production/mcc_generated_files/dma.o
+ .debug_str       0x000537        0x1a5 build/default/production/mcc_generated_files/system.o
+ .debug_str       0x0006dc         0x13 build/default/production/mcc_generated_files/tmr2.o
+ .debug_str       0x0006ef         0x2a build/default/production/mcc_generated_files/oc1.o
+ .debug_str       0x000719         0x32 build/default/production/mcc_generated_files/tmr1.o
+ .debug_str       0x00074b          0x9 build/default/production/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -572,7 +579,7 @@ __FALTREG
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x901
+                  0x000000        0x93d
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000        0x282 build/default/production/mcc_generated_files/can1.o
@@ -597,11 +604,11 @@ __FALTREG
  .debug_pubnames
                   0x000664        0x12d build/default/production/mcc_generated_files/oc1.o
  .debug_pubnames
-                  0x000791         0x2e build/default/production/main.o
+                  0x000791        0x156 build/default/production/mcc_generated_files/tmr1.o
  .debug_pubnames
-                  0x0007bf        0x11a build/default/production/mcc_generated_files/tmr1.o
+                  0x0008e7         0x2e build/default/production/main.o
  .debug_pubnames
-                  0x0008d9         0x28 build/default/production/global.o
+                  0x000915         0x28 build/default/production/global.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -631,9 +638,9 @@ __FALTREG
  .debug_aranges
                   0x000128         0x18 build/default/production/mcc_generated_files/oc1.o
  .debug_aranges
-                  0x000140         0x18 build/default/production/main.o
+                  0x000140         0x18 build/default/production/mcc_generated_files/tmr1.o
  .debug_aranges
-                  0x000158         0x18 build/default/production/mcc_generated_files/tmr1.o
+                  0x000158         0x18 build/default/production/main.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -2088,74 +2095,74 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000170        0xceb
+                  0x000170        0xd32
  .debug_pubtypes
                   0x000170        0x4e8 build/default/production/mcc_generated_files/can1.o
  .debug_pubtypes
                   0x000658         0x80 build/default/production/mcc_generated_files/pin_manager.o
  .debug_pubtypes
-                  0x0006d8         0x12 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x0006d8         0x3c build/default/production/mcc_generated_files/interrupt_manager.o
  .debug_pubtypes
-                  0x0006ea         0x94 build/default/production/mcc_generated_files/traps.o
+                  0x000714         0x94 build/default/production/mcc_generated_files/traps.o
  .debug_pubtypes
-                  0x00077e         0x42 build/default/production/mcc_generated_files/reset.o
+                  0x0007a8         0x42 build/default/production/mcc_generated_files/reset.o
  .debug_pubtypes
-                  0x0007c0         0x2b build/default/production/mcc_generated_files/clock.o
+                  0x0007ea         0x2b build/default/production/mcc_generated_files/clock.o
  .debug_pubtypes
-                  0x0007eb        0x1e5 build/default/production/mcc_generated_files/dma.o
+                  0x000815        0x1e5 build/default/production/mcc_generated_files/dma.o
  .debug_pubtypes
-                  0x0009d0        0x238 build/default/production/mcc_generated_files/system.o
+                  0x0009fa        0x238 build/default/production/mcc_generated_files/system.o
  .debug_pubtypes
-                  0x000c08         0x1f build/default/production/mcc_generated_files/delay.o
+                  0x000c32         0x1f build/default/production/mcc_generated_files/delay.o
  .debug_pubtypes
-                  0x000c27         0x87 build/default/production/mcc_generated_files/tmr2.o
+                  0x000c51         0x87 build/default/production/mcc_generated_files/tmr2.o
  .debug_pubtypes
-                  0x000cae         0x91 build/default/production/mcc_generated_files/oc1.o
+                  0x000cd8         0x91 build/default/production/mcc_generated_files/oc1.o
  .debug_pubtypes
-                  0x000d3f         0x77 build/default/production/main.o
+                  0x000d69         0xa4 build/default/production/mcc_generated_files/tmr1.o
  .debug_pubtypes
-                  0x000db6         0x87 build/default/production/mcc_generated_files/tmr1.o
+                  0x000e0d         0x77 build/default/production/main.o
  .debug_pubtypes
-                  0x000e3d         0x1e build/default/production/global.o
+                  0x000e84         0x1e build/default/production/global.o
 
 __c30_signature
-                  0x000e5b         0x6c
+                  0x000ea2         0x6c
  __c30_signature
-                  0x000e5b          0x6 build/default/production/mcc_generated_files/can1.o
+                  0x000ea2          0x6 build/default/production/mcc_generated_files/can1.o
  __c30_signature
-                  0x000e61          0x6 build/default/production/mcc_generated_files/pin_manager.o
+                  0x000ea8          0x6 build/default/production/mcc_generated_files/pin_manager.o
  __c30_signature
-                  0x000e67          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x000eae          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
  __c30_signature
-                  0x000e6d          0x6 build/default/production/mcc_generated_files/traps.o
+                  0x000eb4          0x6 build/default/production/mcc_generated_files/traps.o
  __c30_signature
-                  0x000e73          0x6 build/default/production/mcc_generated_files/mcc.o
+                  0x000eba          0x6 build/default/production/mcc_generated_files/mcc.o
  __c30_signature
-                  0x000e79          0x6 build/default/production/mcc_generated_files/reset.o
+                  0x000ec0          0x6 build/default/production/mcc_generated_files/reset.o
  __c30_signature
-                  0x000e7f          0x6 build/default/production/mcc_generated_files/clock.o
+                  0x000ec6          0x6 build/default/production/mcc_generated_files/clock.o
  __c30_signature
-                  0x000e85          0x6 build/default/production/mcc_generated_files/dma.o
+                  0x000ecc          0x6 build/default/production/mcc_generated_files/dma.o
  __c30_signature
-                  0x000e8b          0x6 build/default/production/mcc_generated_files/system.o
+                  0x000ed2          0x6 build/default/production/mcc_generated_files/system.o
  __c30_signature
-                  0x000e91          0x6 build/default/production/mcc_generated_files/delay.o
+                  0x000ed8          0x6 build/default/production/mcc_generated_files/delay.o
  __c30_signature
-                  0x000e97          0x6 build/default/production/mcc_generated_files/tmr2.o
+                  0x000ede          0x6 build/default/production/mcc_generated_files/tmr2.o
  __c30_signature
-                  0x000e9d          0x6 build/default/production/mcc_generated_files/oc1.o
+                  0x000ee4          0x6 build/default/production/mcc_generated_files/oc1.o
  __c30_signature
-                  0x000ea3          0x6 build/default/production/main.o
+                  0x000eea          0x6 build/default/production/mcc_generated_files/tmr1.o
  __c30_signature
-                  0x000ea9          0x6 build/default/production/mcc_generated_files/tmr1.o
+                  0x000ef0          0x6 build/default/production/main.o
  __c30_signature
-                  0x000eaf          0x6 build/default/production/global.o
+                  0x000ef6          0x6 build/default/production/global.o
  __c30_signature
-                  0x000eb5          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_extendedep.o)
+                  0x000efc          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_extendedep.o)
  __c30_signature
-                  0x000ebb          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_extended.o)
+                  0x000f02          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_extended.o)
  __c30_signature
-                  0x000ec1          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ep.Meo)
+                  0x000f08          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ep.Meo)
 
 .nbss               0x1000          0x2
  .nbss              0x1000          0x2 build/default/production/mcc_generated_files/can1.o
@@ -2163,20 +2170,22 @@ __c30_signature
 .ndata              0x1002          0x2
  .ndata             0x1002          0x2 build/default/production/mcc_generated_files/traps.o
 
-.nbss               0x1004          0x2
+.nbss               0x1004          0x4
  .nbss              0x1004          0x2 build/default/production/mcc_generated_files/oc1.o
+ .nbss              0x1006          0x2 build/default/production/mcc_generated_files/tmr1.o
+                    0x1006                  _TMR1_InterruptHandler
 
 _000000000664DA00664dfad1
                     0x1200        0x200
  _000000000664DA00664dfad1
                     0x1200        0x200 build/default/production/mcc_generated_files/can1.o
 
-.bss                0x1006         0x2c
- .bss               0x1006         0x20 build/default/production/mcc_generated_files/traps.o
- .bss               0x1026          0x8 build/default/production/global.o
-                    0x1026                  _globalMessageData
- .bss               0x102e          0x2 build/default/production/mcc_generated_files/tmr2.o
- .bss               0x1030          0x2 build/default/production/mcc_generated_files/tmr1.o
+.bss                0x1008         0x2c
+ .bss               0x1008         0x20 build/default/production/mcc_generated_files/traps.o
+ .bss               0x1028          0x8 build/default/production/global.o
+                    0x1028                  _globalMessageData
+ .bss               0x1030          0x2 build/default/production/mcc_generated_files/tmr2.o
+ .bss               0x1032          0x2 build/default/production/mcc_generated_files/tmr1.o
 
 .ivt._C1Interrupt
                   0x00005a          0x2
@@ -2270,107 +2279,113 @@ _000000000664DA00664dfad1
 .config_BSLIM     0x02ab90          0x2
  .config_BSLIM    0x02ab90          0x2 build/default/production/mcc_generated_files/system.o
 
-.text             0x000444       0x108c
- .text            0x000444        0xa1c build/default/production/mcc_generated_files/can1.o
-                  0x000838                  _CAN1_Initialize
-                  0x00093e                  _CAN1_TransmitEnable
-                  0x000958                  _CAN1_ReceiveEnable
-                  0x000972                  _CAN1_OperationModeSet
-                  0x0009be                  _CAN1_OperationModeGet
-                  0x0009cc                  _CAN1_Transmit
-                  0x000a5c                  _CAN1_Receive
-                  0x000ae8                  _CAN1_IsBusOff
-                  0x000b00                  _CAN1_IsRXErrorPassive
-                  0x000b18                  _CAN1_IsRxErrorWarning
-                  0x000b30                  _CAN1_IsRxErrorActive
-                  0x000b4c                  _CAN1_IsTXErrorPassive
-                  0x000b64                  _CAN1_IsTxErrorWarning
-                  0x000b7c                  _CAN1_IsTxErrorActive
-                  0x000b98                  _CAN1_ReceivedMessageCountGet
-                  0x000bfe                  _CAN1_Sleep
-                  0x000c20                  _CAN1_DefaultBusWakeUpActivityHandler
-                  0x000c26                  _CAN1_SetBusWakeUpActivityInterruptHandler
-                  0x000c32                  _CAN1_transmit
-                  0x000cea                  _CAN1_receive
-                  0x000d90                  _CAN1_isBusOff
-                  0x000da8                  _CAN1_isRXErrorPassive
-                  0x000dc0                  _CAN1_isTXErrorPassive
-                  0x000dd8                  _CAN1_messagesInBuffer
-                  0x000e3e                  _CAN1_sleep
- .text            0x000e60        0x114 build/default/production/mcc_generated_files/reset.o
-                  0x000e60                  _RESET_GetCause
-                  0x000e68                  _RESET_CauseHandler
-                  0x000f6c                  _RESET_CauseClearAll
- .text            0x000f74         0xf4 build/default/production/mcc_generated_files/oc1.o
-                  0x000f74                  _OC1_Initialize
-                  0x000f94                  _OC1_CallBack
-                  0x000f9a                  _OC1_Tasks
-                  0x000fac                  _OC1_Start
-                  0x000fc6                  _OC1_Stop
-                  0x000fd4                  _OC1_SecondaryValueSet
-                  0x000fe0                  _OC1_PrimaryValueSet
-                  0x000fec                  _OC1_IsCompareCycleComplete
-                  0x001004                  _OC1_FaultStatusGet
-                  0x00102a                  _OC1_FaultStatusClear
-                  0x001040                  _OC1_ManualTriggerSet
-                  0x001048                  _OC1_TriggerStatusGet
-                  0x001060                  _OC1_TriggerStatusClear
- .text            0x001068         0xd2 build/default/production/mcc_generated_files/dma.o
-                  0x001068                  _DMA_Initialize
-                  0x0010d6                  _DMA_Channel0_CallBack
-                  0x0010dc                  _DMA_Channel0_Tasks
-                  0x0010ee                  _DMA_Channel1_CallBack
-                  0x0010f4                  _DMA_Channel1_Tasks
-                  0x001108                  _DMA_Channel2_CallBack
-                  0x00110e                  _DMA_Channel2_Tasks
-                  0x001122                  _DMA_Channel3_CallBack
-                  0x001128                  _DMA_Channel3_Tasks
- .text            0x00113a         0xbc build/default/production/main.o
-                  0x00113a                  _SendCANMessage
-                  0x00118c                  _main
- .text            0x0011f6         0xb2 build/default/production/mcc_generated_files/tmr2.o
-                  0x0011f6                  _TMR2_Initialize
-                  0x00120c                  _TMR2_Tasks_16BitOperation
-                  0x00122e                  _TMR2_Period16BitSet
-                  0x001240                  _TMR2_Period16BitGet
-                  0x001248                  _TMR2_Counter16BitSet
-                  0x00125a                  _TMR2_Counter16BitGet
-                  0x001262                  _TMR2_Start
-                  0x001270                  _TMR2_Stop
-                  0x001278                  _TMR2_GetElapsedThenClear
-                  0x001290                  _TMR2_SoftwareCounterGet
-                  0x00129c                  _TMR2_SoftwareCounterClear
- .text            0x0012a8         0xb0 build/default/production/mcc_generated_files/tmr1.o
-                  0x0012a8                  _TMR1_Initialize
-                  0x0012be                  _TMR1_Tasks_16BitOperation
-                  0x0012de                  _TMR1_Period16BitSet
-                  0x0012f0                  _TMR1_Period16BitGet
-                  0x0012f8                  _TMR1_Counter16BitSet
-                  0x00130a                  _TMR1_Counter16BitGet
-                  0x001312                  _TMR1_Start
-                  0x001320                  _TMR1_Stop
-                  0x001328                  _TMR1_GetElapsedThenClear
-                  0x001340                  _TMR1_SoftwareCounterGet
-                  0x00134c                  _TMR1_SoftwareCounterClear
- .text            0x001358         0xac build/default/production/mcc_generated_files/pin_manager.o
-                  0x001358                  _PIN_MANAGER_Initialize
- .text            0x001404         0x56 build/default/production/mcc_generated_files/delay.o
-                  0x001404                  _DELAY_milliseconds
-                  0x001426                  _DELAY_microseconds
- .text            0x00145a         0x3c build/default/production/mcc_generated_files/clock.o
-                  0x00145a                  _CLOCK_Initialize
- .text            0x001496         0x3a build/default/production/mcc_generated_files/system.o
-                  0x0014b4                  _SYSTEM_Initialize
+.ivt._T1Interrupt
+                  0x00001a          0x2
+ .ivt._T1Interrupt
+                  0x00001a          0x2 build/default/production/mcc_generated_files/tmr1.o
 
-.dinit            0x0014d0         0x34
- .dinit           0x0014d0         0x34 data_init
+.text             0x00047e       0x10a0
+ .text            0x00047e        0xa1c build/default/production/mcc_generated_files/can1.o
+                  0x000872                  _CAN1_Initialize
+                  0x000978                  _CAN1_TransmitEnable
+                  0x000992                  _CAN1_ReceiveEnable
+                  0x0009ac                  _CAN1_OperationModeSet
+                  0x0009f8                  _CAN1_OperationModeGet
+                  0x000a06                  _CAN1_Transmit
+                  0x000a96                  _CAN1_Receive
+                  0x000b22                  _CAN1_IsBusOff
+                  0x000b3a                  _CAN1_IsRXErrorPassive
+                  0x000b52                  _CAN1_IsRxErrorWarning
+                  0x000b6a                  _CAN1_IsRxErrorActive
+                  0x000b86                  _CAN1_IsTXErrorPassive
+                  0x000b9e                  _CAN1_IsTxErrorWarning
+                  0x000bb6                  _CAN1_IsTxErrorActive
+                  0x000bd2                  _CAN1_ReceivedMessageCountGet
+                  0x000c38                  _CAN1_Sleep
+                  0x000c5a                  _CAN1_DefaultBusWakeUpActivityHandler
+                  0x000c60                  _CAN1_SetBusWakeUpActivityInterruptHandler
+                  0x000c6c                  _CAN1_transmit
+                  0x000d24                  _CAN1_receive
+                  0x000dca                  _CAN1_isBusOff
+                  0x000de2                  _CAN1_isRXErrorPassive
+                  0x000dfa                  _CAN1_isTXErrorPassive
+                  0x000e12                  _CAN1_messagesInBuffer
+                  0x000e78                  _CAN1_sleep
+ .text            0x000e9a        0x114 build/default/production/mcc_generated_files/reset.o
+                  0x000e9a                  _RESET_GetCause
+                  0x000ea2                  _RESET_CauseHandler
+                  0x000fa6                  _RESET_CauseClearAll
+ .text            0x000fae         0xf4 build/default/production/mcc_generated_files/oc1.o
+                  0x000fae                  _OC1_Initialize
+                  0x000fce                  _OC1_CallBack
+                  0x000fd4                  _OC1_Tasks
+                  0x000fe6                  _OC1_Start
+                  0x001000                  _OC1_Stop
+                  0x00100e                  _OC1_SecondaryValueSet
+                  0x00101a                  _OC1_PrimaryValueSet
+                  0x001026                  _OC1_IsCompareCycleComplete
+                  0x00103e                  _OC1_FaultStatusGet
+                  0x001064                  _OC1_FaultStatusClear
+                  0x00107a                  _OC1_ManualTriggerSet
+                  0x001082                  _OC1_TriggerStatusGet
+                  0x00109a                  _OC1_TriggerStatusClear
+ .text            0x0010a2         0xd2 build/default/production/mcc_generated_files/dma.o
+                  0x0010a2                  _DMA_Initialize
+                  0x001110                  _DMA_Channel0_CallBack
+                  0x001116                  _DMA_Channel0_Tasks
+                  0x001128                  _DMA_Channel1_CallBack
+                  0x00112e                  _DMA_Channel1_Tasks
+                  0x001142                  _DMA_Channel2_CallBack
+                  0x001148                  _DMA_Channel2_Tasks
+                  0x00115c                  _DMA_Channel3_CallBack
+                  0x001162                  _DMA_Channel3_Tasks
+ .text            0x001174         0xc8 build/default/production/main.o
+                  0x001174                  _SendCANMessage
+                  0x0011c6                  _main
+ .text            0x00123c         0xb8 build/default/production/mcc_generated_files/tmr1.o
+                  0x00123c                  _TMR1_Initialize
+                  0x001260                  _TMR1_Period16BitSet
+                  0x001272                  _TMR1_Period16BitGet
+                  0x00127a                  _TMR1_Counter16BitSet
+                  0x00128c                  _TMR1_Counter16BitGet
+                  0x001294                  _TMR1_CallBack
+                  0x00129a                  _TMR1_SetInterruptHandler
+                  0x0012aa                  _TMR1_Start
+                  0x0012ba                  _TMR1_Stop
+                  0x0012c4                  _TMR1_GetElapsedThenClear
+                  0x0012dc                  _TMR1_SoftwareCounterGet
+                  0x0012e8                  _TMR1_SoftwareCounterClear
+ .text            0x0012f4         0xb2 build/default/production/mcc_generated_files/tmr2.o
+                  0x0012f4                  _TMR2_Initialize
+                  0x00130a                  _TMR2_Tasks_16BitOperation
+                  0x00132c                  _TMR2_Period16BitSet
+                  0x00133e                  _TMR2_Period16BitGet
+                  0x001346                  _TMR2_Counter16BitSet
+                  0x001358                  _TMR2_Counter16BitGet
+                  0x001360                  _TMR2_Start
+                  0x00136e                  _TMR2_Stop
+                  0x001376                  _TMR2_GetElapsedThenClear
+                  0x00138e                  _TMR2_SoftwareCounterGet
+                  0x00139a                  _TMR2_SoftwareCounterClear
+ .text            0x0013a6         0xac build/default/production/mcc_generated_files/pin_manager.o
+                  0x0013a6                  _PIN_MANAGER_Initialize
+ .text            0x001452         0x56 build/default/production/mcc_generated_files/delay.o
+                  0x001452                  _DELAY_milliseconds
+                  0x001474                  _DELAY_microseconds
+ .text            0x0014a8         0x3c build/default/production/mcc_generated_files/clock.o
+                  0x0014a8                  _CLOCK_Initialize
+ .text            0x0014e4         0x3a build/default/production/mcc_generated_files/system.o
+                  0x001502                  _SYSTEM_Initialize
 
-.init.delay32     0x001504         0x1c
- .init.delay32    0x001504         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ep.Meo)
-                  0x001504                  ___delay32
+.dinit            0x00151e         0x3a
+ .dinit           0x00151e         0x3a data_init
 
-.text             0x001520         0x1e
- .text            0x001520         0x18 build/default/production/mcc_generated_files/traps.o
-                  0x001520                  _TRAPS_halt_on_error
- .text            0x001538          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x001538                  _INTERRUPT_Initialize
+.init.delay32     0x001558         0x1c
+ .init.delay32    0x001558         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ep.Meo)
+                  0x001558                  ___delay32
+
+.text             0x001574         0x28
+ .text            0x001574         0x18 build/default/production/mcc_generated_files/traps.o
+                  0x001574                  _TRAPS_halt_on_error
+ .text            0x00158c         0x10 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x00158c                  _INTERRUPT_Initialize

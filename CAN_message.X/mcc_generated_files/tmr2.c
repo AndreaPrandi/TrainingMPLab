@@ -50,7 +50,6 @@
 #include <stdio.h>
 #include "tmr2.h"
 
-
 /**
  Section: File specific functions
 */
@@ -91,10 +90,10 @@ void TMR2_Initialize (void)
 {
     //TMR2 0; 
     TMR2 = 0x00;
-    //Period = 0.001008 s; Frequency = 4000000 Hz; PR2 62; 
-    PR2 = 0x3E;
-    //TCKPS 1:64; T32 16 Bit; TON enabled; TSIDL disabled; TCS FOSC/2; TGATE disabled; 
-    T2CON = 0x8020;
+    //Period = 0.000036 s; Frequency = 4000000 Hz; PR2 17; 
+    PR2 = 0x11;
+    //TCKPS 1:8; T32 16 Bit; TON enabled; TSIDL disabled; TCS FOSC/2; TGATE disabled; 
+    T2CON = 0x8010;
 
 	
     tmr2_obj.timerElapsed = false;

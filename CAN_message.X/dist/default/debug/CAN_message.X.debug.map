@@ -4,13 +4,13 @@ Tool Name:
   c:\program files\microchip\xc16\v2.10\bin\bin\..\bin/elf-ld.exe
 
 Command:
-  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp00007964.00 \
-  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp00007964.01 \
-  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp00007964.02 \
-  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp00007964.03 \
-  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp00007964.04 \
-  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp00007964.05 \
-  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp00007964.06 \
+  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp000074a0.00 \
+  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp000074a0.01 \
+  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp000074a0.02 \
+  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp000074a0.03 \
+  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp000074a0.04 \
+  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp000074a0.05 \
+  -TC:\\Users\\aprandi\\AppData\\Local\\Temp\\tmp000074a0.06 \
   -p33EV256GM106 \
   --mdfp=C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/dsPIC33EV-GM-00X-10X_DFP/1.4.243/xc16 \
   -o \
@@ -113,13 +113,12 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x244           0x366  (870)
-.const                       0x444                 0x8             0xc  (12)
-.text                        0x44c              0x1084          0x18c6  (6342)
-.dinit                      0x14d0                0x34            0x4e  (78)
-.init.delay32               0x1504                0x1c            0x2a  (42)
-.text                       0x1520                0x20            0x30  (48)
+.text                        0x444              0x109a          0x18e7  (6375)
+.dinit                      0x14de                0x34            0x4e  (78)
+.init.delay32               0x1512                0x1c            0x2a  (42)
+.text                       0x152e                0x20            0x30  (48)
 
-                 Total "program" memory used (bytes):         0x1ce0  (7392) 2%
+                 Total "program" memory used (bytes):         0x1cf5  (7413) 2%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x4000]
@@ -177,156 +176,156 @@ External Symbols in Program Memory (by address):
                   0x0003d2                  __HardTrapError
                   0x0003f2                  __SoftTrapError
                   0x00043e                  __DefaultInterrupt
-                  0x000840                  _CAN1_Initialize
-                  0x000946                  _CAN1_TransmitEnable
-                  0x000960                  _CAN1_ReceiveEnable
-                  0x00097a                  _CAN1_OperationModeSet
-                  0x0009c6                  _CAN1_OperationModeGet
-                  0x0009d4                  _CAN1_Transmit
-                  0x000a64                  _CAN1_Receive
-                  0x000af0                  _CAN1_IsBusOff
-                  0x000b08                  _CAN1_IsRXErrorPassive
-                  0x000b20                  _CAN1_IsRxErrorWarning
-                  0x000b38                  _CAN1_IsRxErrorActive
-                  0x000b54                  _CAN1_IsTXErrorPassive
-                  0x000b6c                  _CAN1_IsTxErrorWarning
-                  0x000b84                  _CAN1_IsTxErrorActive
-                  0x000ba0                  _CAN1_ReceivedMessageCountGet
-                  0x000c06                  _CAN1_Sleep
-                  0x000c2e                  _CAN1_SetBusWakeUpActivityInterruptHandler
-                  0x000c3a                  _CAN1_transmit
-                  0x000cf2                  _CAN1_receive
-                  0x000d98                  _CAN1_isBusOff
-                  0x000db0                  _CAN1_isRXErrorPassive
-                  0x000dc8                  _CAN1_isTXErrorPassive
-                  0x000de0                  _CAN1_messagesInBuffer
-                  0x000e46                  _CAN1_sleep
-                  0x000e68                  _RESET_GetCause
-                  0x000f74                  _RESET_CauseClearAll
-                  0x000f7c                  _OC1_Initialize
-                  0x000fa2                  _OC1_Tasks
-                  0x000fb4                  _OC1_Start
-                  0x000fce                  _OC1_Stop
-                  0x000fdc                  _OC1_SecondaryValueSet
-                  0x000fe8                  _OC1_PrimaryValueSet
-                  0x000ff4                  _OC1_IsCompareCycleComplete
-                  0x00100c                  _OC1_FaultStatusGet
-                  0x001032                  _OC1_FaultStatusClear
-                  0x001048                  _OC1_ManualTriggerSet
-                  0x001050                  _OC1_TriggerStatusGet
-                  0x001068                  _OC1_TriggerStatusClear
-                  0x001070                  _DMA_Initialize
-                  0x0010e4                  _DMA_Channel0_Tasks
-                  0x0010fc                  _DMA_Channel1_Tasks
-                  0x001116                  _DMA_Channel2_Tasks
-                  0x001130                  _DMA_Channel3_Tasks
-                  0x001142                  _SendCANMessage
-                  0x001194                  _main
-                  0x0011f6                  _TMR2_Initialize
-                  0x00120c                  _TMR2_Tasks_16BitOperation
-                  0x00122e                  _TMR2_Period16BitSet
-                  0x001240                  _TMR2_Period16BitGet
-                  0x001248                  _TMR2_Counter16BitSet
-                  0x00125a                  _TMR2_Counter16BitGet
-                  0x001262                  _TMR2_Start
-                  0x001270                  _TMR2_Stop
-                  0x001278                  _TMR2_GetElapsedThenClear
-                  0x001290                  _TMR2_SoftwareCounterGet
-                  0x00129c                  _TMR2_SoftwareCounterClear
-                  0x0012a8                  _TMR1_Initialize
-                  0x0012be                  _TMR1_Tasks_16BitOperation
-                  0x0012de                  _TMR1_Period16BitSet
-                  0x0012f0                  _TMR1_Period16BitGet
-                  0x0012f8                  _TMR1_Counter16BitSet
-                  0x00130a                  _TMR1_Counter16BitGet
-                  0x001312                  _TMR1_Start
-                  0x001320                  _TMR1_Stop
-                  0x001328                  _TMR1_GetElapsedThenClear
-                  0x001340                  _TMR1_SoftwareCounterGet
-                  0x00134c                  _TMR1_SoftwareCounterClear
-                  0x001358                  _PIN_MANAGER_Initialize
-                  0x001404                  _DELAY_milliseconds
-                  0x001426                  _DELAY_microseconds
-                  0x00145a                  _CLOCK_Initialize
-                  0x0014b4                  _SYSTEM_Initialize
-                  0x001504                  ___delay32
-                  0x00153a                  _INTERRUPT_Initialize
+                  0x000838                  _CAN1_Initialize
+                  0x00093e                  _CAN1_TransmitEnable
+                  0x000958                  _CAN1_ReceiveEnable
+                  0x000972                  _CAN1_OperationModeSet
+                  0x0009be                  _CAN1_OperationModeGet
+                  0x0009cc                  _CAN1_Transmit
+                  0x000a5c                  _CAN1_Receive
+                  0x000ae8                  _CAN1_IsBusOff
+                  0x000b00                  _CAN1_IsRXErrorPassive
+                  0x000b18                  _CAN1_IsRxErrorWarning
+                  0x000b30                  _CAN1_IsRxErrorActive
+                  0x000b4c                  _CAN1_IsTXErrorPassive
+                  0x000b64                  _CAN1_IsTxErrorWarning
+                  0x000b7c                  _CAN1_IsTxErrorActive
+                  0x000b98                  _CAN1_ReceivedMessageCountGet
+                  0x000bfe                  _CAN1_Sleep
+                  0x000c26                  _CAN1_SetBusWakeUpActivityInterruptHandler
+                  0x000c32                  _CAN1_transmit
+                  0x000cea                  _CAN1_receive
+                  0x000d90                  _CAN1_isBusOff
+                  0x000da8                  _CAN1_isRXErrorPassive
+                  0x000dc0                  _CAN1_isTXErrorPassive
+                  0x000dd8                  _CAN1_messagesInBuffer
+                  0x000e3e                  _CAN1_sleep
+                  0x000e60                  _RESET_GetCause
+                  0x000f6c                  _RESET_CauseClearAll
+                  0x000f74                  _OC1_Initialize
+                  0x000f9a                  _OC1_Tasks
+                  0x000fac                  _OC1_Start
+                  0x000fc6                  _OC1_Stop
+                  0x000fd4                  _OC1_SecondaryValueSet
+                  0x000fe0                  _OC1_PrimaryValueSet
+                  0x000fec                  _OC1_IsCompareCycleComplete
+                  0x001004                  _OC1_FaultStatusGet
+                  0x00102a                  _OC1_FaultStatusClear
+                  0x001040                  _OC1_ManualTriggerSet
+                  0x001048                  _OC1_TriggerStatusGet
+                  0x001060                  _OC1_TriggerStatusClear
+                  0x001068                  _DMA_Initialize
+                  0x0010dc                  _DMA_Channel0_Tasks
+                  0x0010f4                  _DMA_Channel1_Tasks
+                  0x00110e                  _DMA_Channel2_Tasks
+                  0x001128                  _DMA_Channel3_Tasks
+                  0x00113a                  _SendCANMessage
+                  0x00118c                  _main
+                  0x001204                  _TMR2_Initialize
+                  0x00121a                  _TMR2_Tasks_16BitOperation
+                  0x00123c                  _TMR2_Period16BitSet
+                  0x00124e                  _TMR2_Period16BitGet
+                  0x001256                  _TMR2_Counter16BitSet
+                  0x001268                  _TMR2_Counter16BitGet
+                  0x001270                  _TMR2_Start
+                  0x00127e                  _TMR2_Stop
+                  0x001286                  _TMR2_GetElapsedThenClear
+                  0x00129e                  _TMR2_SoftwareCounterGet
+                  0x0012aa                  _TMR2_SoftwareCounterClear
+                  0x0012b6                  _TMR1_Initialize
+                  0x0012cc                  _TMR1_Tasks_16BitOperation
+                  0x0012ec                  _TMR1_Period16BitSet
+                  0x0012fe                  _TMR1_Period16BitGet
+                  0x001306                  _TMR1_Counter16BitSet
+                  0x001318                  _TMR1_Counter16BitGet
+                  0x001320                  _TMR1_Start
+                  0x00132e                  _TMR1_Stop
+                  0x001336                  _TMR1_GetElapsedThenClear
+                  0x00134e                  _TMR1_SoftwareCounterGet
+                  0x00135a                  _TMR1_SoftwareCounterClear
+                  0x001366                  _PIN_MANAGER_Initialize
+                  0x001412                  _DELAY_milliseconds
+                  0x001434                  _DELAY_microseconds
+                  0x001468                  _CLOCK_Initialize
+                  0x0014c2                  _SYSTEM_Initialize
+                  0x001512                  ___delay32
+                  0x001548                  _INTERRUPT_Initialize
                   0x02ab80                  __FSEC.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x000840                  _CAN1_Initialize
-                  0x000af0                  _CAN1_IsBusOff
-                  0x000b08                  _CAN1_IsRXErrorPassive
-                  0x000b38                  _CAN1_IsRxErrorActive
-                  0x000b20                  _CAN1_IsRxErrorWarning
-                  0x000b54                  _CAN1_IsTXErrorPassive
-                  0x000b84                  _CAN1_IsTxErrorActive
-                  0x000b6c                  _CAN1_IsTxErrorWarning
-                  0x0009c6                  _CAN1_OperationModeGet
-                  0x00097a                  _CAN1_OperationModeSet
-                  0x000a64                  _CAN1_Receive
-                  0x000960                  _CAN1_ReceiveEnable
-                  0x000ba0                  _CAN1_ReceivedMessageCountGet
-                  0x000c2e                  _CAN1_SetBusWakeUpActivityInterruptHandler
-                  0x000c06                  _CAN1_Sleep
-                  0x0009d4                  _CAN1_Transmit
-                  0x000946                  _CAN1_TransmitEnable
-                  0x000d98                  _CAN1_isBusOff
-                  0x000db0                  _CAN1_isRXErrorPassive
-                  0x000dc8                  _CAN1_isTXErrorPassive
-                  0x000de0                  _CAN1_messagesInBuffer
-                  0x000cf2                  _CAN1_receive
-                  0x000e46                  _CAN1_sleep
-                  0x000c3a                  _CAN1_transmit
-                  0x00145a                  _CLOCK_Initialize
-                  0x001426                  _DELAY_microseconds
-                  0x001404                  _DELAY_milliseconds
-                  0x0010e4                  _DMA_Channel0_Tasks
-                  0x0010fc                  _DMA_Channel1_Tasks
-                  0x001116                  _DMA_Channel2_Tasks
-                  0x001130                  _DMA_Channel3_Tasks
-                  0x001070                  _DMA_Initialize
-                  0x00153a                  _INTERRUPT_Initialize
-                  0x001032                  _OC1_FaultStatusClear
-                  0x00100c                  _OC1_FaultStatusGet
-                  0x000f7c                  _OC1_Initialize
-                  0x000ff4                  _OC1_IsCompareCycleComplete
-                  0x001048                  _OC1_ManualTriggerSet
-                  0x000fe8                  _OC1_PrimaryValueSet
-                  0x000fdc                  _OC1_SecondaryValueSet
-                  0x000fb4                  _OC1_Start
-                  0x000fce                  _OC1_Stop
-                  0x000fa2                  _OC1_Tasks
-                  0x001068                  _OC1_TriggerStatusClear
-                  0x001050                  _OC1_TriggerStatusGet
-                  0x001358                  _PIN_MANAGER_Initialize
-                  0x000f74                  _RESET_CauseClearAll
-                  0x000e68                  _RESET_GetCause
-                  0x0014b4                  _SYSTEM_Initialize
-                  0x001142                  _SendCANMessage
-                  0x00130a                  _TMR1_Counter16BitGet
-                  0x0012f8                  _TMR1_Counter16BitSet
-                  0x001328                  _TMR1_GetElapsedThenClear
-                  0x0012a8                  _TMR1_Initialize
-                  0x0012f0                  _TMR1_Period16BitGet
-                  0x0012de                  _TMR1_Period16BitSet
-                  0x00134c                  _TMR1_SoftwareCounterClear
-                  0x001340                  _TMR1_SoftwareCounterGet
-                  0x001312                  _TMR1_Start
-                  0x001320                  _TMR1_Stop
-                  0x0012be                  _TMR1_Tasks_16BitOperation
-                  0x00125a                  _TMR2_Counter16BitGet
-                  0x001248                  _TMR2_Counter16BitSet
-                  0x001278                  _TMR2_GetElapsedThenClear
-                  0x0011f6                  _TMR2_Initialize
-                  0x001240                  _TMR2_Period16BitGet
-                  0x00122e                  _TMR2_Period16BitSet
-                  0x00129c                  _TMR2_SoftwareCounterClear
-                  0x001290                  _TMR2_SoftwareCounterGet
-                  0x001262                  _TMR2_Start
-                  0x001270                  _TMR2_Stop
-                  0x00120c                  _TMR2_Tasks_16BitOperation
+                  0x000838                  _CAN1_Initialize
+                  0x000ae8                  _CAN1_IsBusOff
+                  0x000b00                  _CAN1_IsRXErrorPassive
+                  0x000b30                  _CAN1_IsRxErrorActive
+                  0x000b18                  _CAN1_IsRxErrorWarning
+                  0x000b4c                  _CAN1_IsTXErrorPassive
+                  0x000b7c                  _CAN1_IsTxErrorActive
+                  0x000b64                  _CAN1_IsTxErrorWarning
+                  0x0009be                  _CAN1_OperationModeGet
+                  0x000972                  _CAN1_OperationModeSet
+                  0x000a5c                  _CAN1_Receive
+                  0x000958                  _CAN1_ReceiveEnable
+                  0x000b98                  _CAN1_ReceivedMessageCountGet
+                  0x000c26                  _CAN1_SetBusWakeUpActivityInterruptHandler
+                  0x000bfe                  _CAN1_Sleep
+                  0x0009cc                  _CAN1_Transmit
+                  0x00093e                  _CAN1_TransmitEnable
+                  0x000d90                  _CAN1_isBusOff
+                  0x000da8                  _CAN1_isRXErrorPassive
+                  0x000dc0                  _CAN1_isTXErrorPassive
+                  0x000dd8                  _CAN1_messagesInBuffer
+                  0x000cea                  _CAN1_receive
+                  0x000e3e                  _CAN1_sleep
+                  0x000c32                  _CAN1_transmit
+                  0x001468                  _CLOCK_Initialize
+                  0x001434                  _DELAY_microseconds
+                  0x001412                  _DELAY_milliseconds
+                  0x0010dc                  _DMA_Channel0_Tasks
+                  0x0010f4                  _DMA_Channel1_Tasks
+                  0x00110e                  _DMA_Channel2_Tasks
+                  0x001128                  _DMA_Channel3_Tasks
+                  0x001068                  _DMA_Initialize
+                  0x001548                  _INTERRUPT_Initialize
+                  0x00102a                  _OC1_FaultStatusClear
+                  0x001004                  _OC1_FaultStatusGet
+                  0x000f74                  _OC1_Initialize
+                  0x000fec                  _OC1_IsCompareCycleComplete
+                  0x001040                  _OC1_ManualTriggerSet
+                  0x000fe0                  _OC1_PrimaryValueSet
+                  0x000fd4                  _OC1_SecondaryValueSet
+                  0x000fac                  _OC1_Start
+                  0x000fc6                  _OC1_Stop
+                  0x000f9a                  _OC1_Tasks
+                  0x001060                  _OC1_TriggerStatusClear
+                  0x001048                  _OC1_TriggerStatusGet
+                  0x001366                  _PIN_MANAGER_Initialize
+                  0x000f6c                  _RESET_CauseClearAll
+                  0x000e60                  _RESET_GetCause
+                  0x0014c2                  _SYSTEM_Initialize
+                  0x00113a                  _SendCANMessage
+                  0x001318                  _TMR1_Counter16BitGet
+                  0x001306                  _TMR1_Counter16BitSet
+                  0x001336                  _TMR1_GetElapsedThenClear
+                  0x0012b6                  _TMR1_Initialize
+                  0x0012fe                  _TMR1_Period16BitGet
+                  0x0012ec                  _TMR1_Period16BitSet
+                  0x00135a                  _TMR1_SoftwareCounterClear
+                  0x00134e                  _TMR1_SoftwareCounterGet
+                  0x001320                  _TMR1_Start
+                  0x00132e                  _TMR1_Stop
+                  0x0012cc                  _TMR1_Tasks_16BitOperation
+                  0x001268                  _TMR2_Counter16BitGet
+                  0x001256                  _TMR2_Counter16BitSet
+                  0x001286                  _TMR2_GetElapsedThenClear
+                  0x001204                  _TMR2_Initialize
+                  0x00124e                  _TMR2_Period16BitGet
+                  0x00123c                  _TMR2_Period16BitSet
+                  0x0012aa                  _TMR2_SoftwareCounterClear
+                  0x00129e                  _TMR2_SoftwareCounterGet
+                  0x001270                  _TMR2_Start
+                  0x00127e                  _TMR2_Stop
+                  0x00121a                  _TMR2_Tasks_16BitOperation
                   0x000372                  __AddressError
                   0x0002fe                  __C1Interrupt
                   0x0003b2                  __DMACError
@@ -337,12 +336,12 @@ External Symbols in Program Memory (by name):
                   0x000330                  __OscillatorFail
                   0x0003f2                  __SoftTrapError
                   0x000350                  __StackError
-                  0x001504                  ___delay32
+                  0x001512                  ___delay32
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x001194                  _main
+                  0x00118c                  _main
 
 Memory Configuration
 
@@ -538,7 +537,7 @@ __FALTREG
 .comment
  *(.comment)
 
-.debug_info       0x000000       0xacbe
+.debug_info       0x000000       0xace8
  *(.debug_info)
  .debug_info      0x000000       0x4011 build/default/debug/mcc_generated_files/can1.o
  .debug_info      0x004011        0xb16 build/default/debug/mcc_generated_files/pin_manager.o
@@ -551,12 +550,12 @@ __FALTREG
  .debug_info      0x008cf8        0x1d4 build/default/debug/mcc_generated_files/delay.o
  .debug_info      0x008ecc        0x6b1 build/default/debug/mcc_generated_files/tmr2.o
  .debug_info      0x00957d        0x958 build/default/debug/mcc_generated_files/oc1.o
- .debug_info      0x009ed5        0x5d4 build/default/debug/main.o
- .debug_info      0x00a4a9        0x6b3 build/default/debug/mcc_generated_files/tmr1.o
- .debug_info      0x00ab5c        0x162 build/default/debug/global.o
+ .debug_info      0x009ed5        0x5fe build/default/debug/main.o
+ .debug_info      0x00a4d3        0x6b3 build/default/debug/mcc_generated_files/tmr1.o
+ .debug_info      0x00ab86        0x162 build/default/debug/global.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0xde7
+.debug_abbrev     0x000000        0xdff
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x29f build/default/debug/mcc_generated_files/can1.o
  .debug_abbrev    0x00029f         0xc5 build/default/debug/mcc_generated_files/pin_manager.o
@@ -570,11 +569,11 @@ __FALTREG
  .debug_abbrev    0x000809         0x67 build/default/debug/mcc_generated_files/delay.o
  .debug_abbrev    0x000870        0x148 build/default/debug/mcc_generated_files/tmr2.o
  .debug_abbrev    0x0009b8        0x14f build/default/debug/mcc_generated_files/oc1.o
- .debug_abbrev    0x000b07        0x149 build/default/debug/main.o
- .debug_abbrev    0x000c50        0x148 build/default/debug/mcc_generated_files/tmr1.o
- .debug_abbrev    0x000d98         0x4f build/default/debug/global.o
+ .debug_abbrev    0x000b07        0x161 build/default/debug/main.o
+ .debug_abbrev    0x000c68        0x148 build/default/debug/mcc_generated_files/tmr1.o
+ .debug_abbrev    0x000db0         0x4f build/default/debug/global.o
 
-.debug_line       0x000000       0x1245
+.debug_line       0x000000       0x124e
  *(.debug_line)
  .debug_line      0x000000        0x340 build/default/debug/mcc_generated_files/can1.o
  .debug_line      0x000340        0x158 build/default/debug/mcc_generated_files/pin_manager.o
@@ -588,9 +587,9 @@ __FALTREG
  .debug_line      0x000be5         0xa6 build/default/debug/mcc_generated_files/delay.o
  .debug_line      0x000c8b        0x14e build/default/debug/mcc_generated_files/tmr2.o
  .debug_line      0x000dd9        0x160 build/default/debug/mcc_generated_files/oc1.o
- .debug_line      0x000f39        0x149 build/default/debug/main.o
- .debug_line      0x001082        0x14e build/default/debug/mcc_generated_files/tmr1.o
- .debug_line      0x0011d0         0x75 build/default/debug/global.o
+ .debug_line      0x000f39        0x152 build/default/debug/main.o
+ .debug_line      0x00108b        0x14e build/default/debug/mcc_generated_files/tmr1.o
+ .debug_line      0x0011d9         0x75 build/default/debug/global.o
 
 .debug_frame      0x000000        0xcbe
  *(.debug_frame)
@@ -2326,110 +2325,107 @@ _00000000066D2A00664dfac6
 .config_BSLIM     0x02ab90          0x2
  .config_BSLIM    0x02ab90          0x2 build/default/debug/mcc_generated_files/system.o
 
-.const              0x8444          0x8 load address 0x000444  
- .const             0x8444          0x8 build/default/debug/main.o
+.text             0x000444       0x109a
+ .text            0x000444        0xa1c build/default/debug/mcc_generated_files/can1.o
+                  0x000838                  _CAN1_Initialize
+                  0x00093e                  _CAN1_TransmitEnable
+                  0x000958                  _CAN1_ReceiveEnable
+                  0x000972                  _CAN1_OperationModeSet
+                  0x0009be                  _CAN1_OperationModeGet
+                  0x0009cc                  _CAN1_Transmit
+                  0x000a5c                  _CAN1_Receive
+                  0x000ae8                  _CAN1_IsBusOff
+                  0x000b00                  _CAN1_IsRXErrorPassive
+                  0x000b18                  _CAN1_IsRxErrorWarning
+                  0x000b30                  _CAN1_IsRxErrorActive
+                  0x000b4c                  _CAN1_IsTXErrorPassive
+                  0x000b64                  _CAN1_IsTxErrorWarning
+                  0x000b7c                  _CAN1_IsTxErrorActive
+                  0x000b98                  _CAN1_ReceivedMessageCountGet
+                  0x000bfe                  _CAN1_Sleep
+                  0x000c20                  _CAN1_DefaultBusWakeUpActivityHandler
+                  0x000c26                  _CAN1_SetBusWakeUpActivityInterruptHandler
+                  0x000c32                  _CAN1_transmit
+                  0x000cea                  _CAN1_receive
+                  0x000d90                  _CAN1_isBusOff
+                  0x000da8                  _CAN1_isRXErrorPassive
+                  0x000dc0                  _CAN1_isTXErrorPassive
+                  0x000dd8                  _CAN1_messagesInBuffer
+                  0x000e3e                  _CAN1_sleep
+ .text            0x000e60        0x114 build/default/debug/mcc_generated_files/reset.o
+                  0x000e60                  _RESET_GetCause
+                  0x000e68                  _RESET_CauseHandler
+                  0x000f6c                  _RESET_CauseClearAll
+ .text            0x000f74         0xf4 build/default/debug/mcc_generated_files/oc1.o
+                  0x000f74                  _OC1_Initialize
+                  0x000f94                  _OC1_CallBack
+                  0x000f9a                  _OC1_Tasks
+                  0x000fac                  _OC1_Start
+                  0x000fc6                  _OC1_Stop
+                  0x000fd4                  _OC1_SecondaryValueSet
+                  0x000fe0                  _OC1_PrimaryValueSet
+                  0x000fec                  _OC1_IsCompareCycleComplete
+                  0x001004                  _OC1_FaultStatusGet
+                  0x00102a                  _OC1_FaultStatusClear
+                  0x001040                  _OC1_ManualTriggerSet
+                  0x001048                  _OC1_TriggerStatusGet
+                  0x001060                  _OC1_TriggerStatusClear
+ .text            0x001068         0xd2 build/default/debug/mcc_generated_files/dma.o
+                  0x001068                  _DMA_Initialize
+                  0x0010d6                  _DMA_Channel0_CallBack
+                  0x0010dc                  _DMA_Channel0_Tasks
+                  0x0010ee                  _DMA_Channel1_CallBack
+                  0x0010f4                  _DMA_Channel1_Tasks
+                  0x001108                  _DMA_Channel2_CallBack
+                  0x00110e                  _DMA_Channel2_Tasks
+                  0x001122                  _DMA_Channel3_CallBack
+                  0x001128                  _DMA_Channel3_Tasks
+ .text            0x00113a         0xca build/default/debug/main.o
+                  0x00113a                  _SendCANMessage
+                  0x00118c                  _main
+ .text            0x001204         0xb2 build/default/debug/mcc_generated_files/tmr2.o
+                  0x001204                  _TMR2_Initialize
+                  0x00121a                  _TMR2_Tasks_16BitOperation
+                  0x00123c                  _TMR2_Period16BitSet
+                  0x00124e                  _TMR2_Period16BitGet
+                  0x001256                  _TMR2_Counter16BitSet
+                  0x001268                  _TMR2_Counter16BitGet
+                  0x001270                  _TMR2_Start
+                  0x00127e                  _TMR2_Stop
+                  0x001286                  _TMR2_GetElapsedThenClear
+                  0x00129e                  _TMR2_SoftwareCounterGet
+                  0x0012aa                  _TMR2_SoftwareCounterClear
+ .text            0x0012b6         0xb0 build/default/debug/mcc_generated_files/tmr1.o
+                  0x0012b6                  _TMR1_Initialize
+                  0x0012cc                  _TMR1_Tasks_16BitOperation
+                  0x0012ec                  _TMR1_Period16BitSet
+                  0x0012fe                  _TMR1_Period16BitGet
+                  0x001306                  _TMR1_Counter16BitSet
+                  0x001318                  _TMR1_Counter16BitGet
+                  0x001320                  _TMR1_Start
+                  0x00132e                  _TMR1_Stop
+                  0x001336                  _TMR1_GetElapsedThenClear
+                  0x00134e                  _TMR1_SoftwareCounterGet
+                  0x00135a                  _TMR1_SoftwareCounterClear
+ .text            0x001366         0xac build/default/debug/mcc_generated_files/pin_manager.o
+                  0x001366                  _PIN_MANAGER_Initialize
+ .text            0x001412         0x56 build/default/debug/mcc_generated_files/delay.o
+                  0x001412                  _DELAY_milliseconds
+                  0x001434                  _DELAY_microseconds
+ .text            0x001468         0x3c build/default/debug/mcc_generated_files/clock.o
+                  0x001468                  _CLOCK_Initialize
+ .text            0x0014a4         0x3a build/default/debug/mcc_generated_files/system.o
+                  0x0014c2                  _SYSTEM_Initialize
 
-.text             0x00044c       0x1084
- .text            0x00044c        0xa1c build/default/debug/mcc_generated_files/can1.o
-                  0x000840                  _CAN1_Initialize
-                  0x000946                  _CAN1_TransmitEnable
-                  0x000960                  _CAN1_ReceiveEnable
-                  0x00097a                  _CAN1_OperationModeSet
-                  0x0009c6                  _CAN1_OperationModeGet
-                  0x0009d4                  _CAN1_Transmit
-                  0x000a64                  _CAN1_Receive
-                  0x000af0                  _CAN1_IsBusOff
-                  0x000b08                  _CAN1_IsRXErrorPassive
-                  0x000b20                  _CAN1_IsRxErrorWarning
-                  0x000b38                  _CAN1_IsRxErrorActive
-                  0x000b54                  _CAN1_IsTXErrorPassive
-                  0x000b6c                  _CAN1_IsTxErrorWarning
-                  0x000b84                  _CAN1_IsTxErrorActive
-                  0x000ba0                  _CAN1_ReceivedMessageCountGet
-                  0x000c06                  _CAN1_Sleep
-                  0x000c28                  _CAN1_DefaultBusWakeUpActivityHandler
-                  0x000c2e                  _CAN1_SetBusWakeUpActivityInterruptHandler
-                  0x000c3a                  _CAN1_transmit
-                  0x000cf2                  _CAN1_receive
-                  0x000d98                  _CAN1_isBusOff
-                  0x000db0                  _CAN1_isRXErrorPassive
-                  0x000dc8                  _CAN1_isTXErrorPassive
-                  0x000de0                  _CAN1_messagesInBuffer
-                  0x000e46                  _CAN1_sleep
- .text            0x000e68        0x114 build/default/debug/mcc_generated_files/reset.o
-                  0x000e68                  _RESET_GetCause
-                  0x000e70                  _RESET_CauseHandler
-                  0x000f74                  _RESET_CauseClearAll
- .text            0x000f7c         0xf4 build/default/debug/mcc_generated_files/oc1.o
-                  0x000f7c                  _OC1_Initialize
-                  0x000f9c                  _OC1_CallBack
-                  0x000fa2                  _OC1_Tasks
-                  0x000fb4                  _OC1_Start
-                  0x000fce                  _OC1_Stop
-                  0x000fdc                  _OC1_SecondaryValueSet
-                  0x000fe8                  _OC1_PrimaryValueSet
-                  0x000ff4                  _OC1_IsCompareCycleComplete
-                  0x00100c                  _OC1_FaultStatusGet
-                  0x001032                  _OC1_FaultStatusClear
-                  0x001048                  _OC1_ManualTriggerSet
-                  0x001050                  _OC1_TriggerStatusGet
-                  0x001068                  _OC1_TriggerStatusClear
- .text            0x001070         0xd2 build/default/debug/mcc_generated_files/dma.o
-                  0x001070                  _DMA_Initialize
-                  0x0010de                  _DMA_Channel0_CallBack
-                  0x0010e4                  _DMA_Channel0_Tasks
-                  0x0010f6                  _DMA_Channel1_CallBack
-                  0x0010fc                  _DMA_Channel1_Tasks
-                  0x001110                  _DMA_Channel2_CallBack
-                  0x001116                  _DMA_Channel2_Tasks
-                  0x00112a                  _DMA_Channel3_CallBack
-                  0x001130                  _DMA_Channel3_Tasks
- .text            0x001142         0xb4 build/default/debug/main.o
-                  0x001142                  _SendCANMessage
-                  0x001194                  _main
- .text            0x0011f6         0xb2 build/default/debug/mcc_generated_files/tmr2.o
-                  0x0011f6                  _TMR2_Initialize
-                  0x00120c                  _TMR2_Tasks_16BitOperation
-                  0x00122e                  _TMR2_Period16BitSet
-                  0x001240                  _TMR2_Period16BitGet
-                  0x001248                  _TMR2_Counter16BitSet
-                  0x00125a                  _TMR2_Counter16BitGet
-                  0x001262                  _TMR2_Start
-                  0x001270                  _TMR2_Stop
-                  0x001278                  _TMR2_GetElapsedThenClear
-                  0x001290                  _TMR2_SoftwareCounterGet
-                  0x00129c                  _TMR2_SoftwareCounterClear
- .text            0x0012a8         0xb0 build/default/debug/mcc_generated_files/tmr1.o
-                  0x0012a8                  _TMR1_Initialize
-                  0x0012be                  _TMR1_Tasks_16BitOperation
-                  0x0012de                  _TMR1_Period16BitSet
-                  0x0012f0                  _TMR1_Period16BitGet
-                  0x0012f8                  _TMR1_Counter16BitSet
-                  0x00130a                  _TMR1_Counter16BitGet
-                  0x001312                  _TMR1_Start
-                  0x001320                  _TMR1_Stop
-                  0x001328                  _TMR1_GetElapsedThenClear
-                  0x001340                  _TMR1_SoftwareCounterGet
-                  0x00134c                  _TMR1_SoftwareCounterClear
- .text            0x001358         0xac build/default/debug/mcc_generated_files/pin_manager.o
-                  0x001358                  _PIN_MANAGER_Initialize
- .text            0x001404         0x56 build/default/debug/mcc_generated_files/delay.o
-                  0x001404                  _DELAY_milliseconds
-                  0x001426                  _DELAY_microseconds
- .text            0x00145a         0x3c build/default/debug/mcc_generated_files/clock.o
-                  0x00145a                  _CLOCK_Initialize
- .text            0x001496         0x3a build/default/debug/mcc_generated_files/system.o
-                  0x0014b4                  _SYSTEM_Initialize
+.dinit            0x0014de         0x34
+ .dinit           0x0014de         0x34 data_init
 
-.dinit            0x0014d0         0x34
- .dinit           0x0014d0         0x34 data_init
+.init.delay32     0x001512         0x1c
+ .init.delay32    0x001512         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ep.Meo)
+                  0x001512                  ___delay32
 
-.init.delay32     0x001504         0x1c
- .init.delay32    0x001504         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ep.Meo)
-                  0x001504                  ___delay32
-
-.text             0x001520         0x20
- .text            0x001520         0x1a build/default/debug/mcc_generated_files/traps.o
-                  0x001520                  _TRAPS_halt_on_error
- .text            0x00153a          0x6 build/default/debug/mcc_generated_files/interrupt_manager.o
-                  0x00153a                  _INTERRUPT_Initialize
+.text             0x00152e         0x20
+ .text            0x00152e         0x1a build/default/debug/mcc_generated_files/traps.o
+                  0x00152e                  _TRAPS_halt_on_error
+ .text            0x001548          0x6 build/default/debug/mcc_generated_files/interrupt_manager.o
+                  0x001548                  _INTERRUPT_Initialize
