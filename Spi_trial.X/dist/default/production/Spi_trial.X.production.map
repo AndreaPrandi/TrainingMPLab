@@ -149,13 +149,13 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0xb9a          0x1167  (4455)
-.const                       0xd9a               0x8cc           0xd32  (3378)
-.text                       0x1666              0x12c6          0x1c29  (7209)
-.dinit                      0x292c                0x26            0x39  (57)
-.init.delay32               0x2952                0x1c            0x2a  (42)
-.text                       0x296e                0x1e            0x2d  (45)
+.const                       0xd9a              0x52cc          0x7c32  (31794)
+.text                       0x6066              0x132c          0x1cc2  (7362)
+.dinit                      0x7392                0x26            0x39  (57)
+.init.delay32               0x73b8                0x1c            0x2a  (42)
+.text                       0x73d4                0x1e            0x2d  (45)
 
-                 Total "program" memory used (bytes):         0x3b52  (15186) 5%
+                 Total "program" memory used (bytes):         0xaaeb  (43755) 16%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x4000]
@@ -215,8 +215,8 @@ External Symbols in Program Memory (by address):
                   0x00048a                  ___floatsisf
                   0x000490                  ___floatunsisf
                   0x000494                  __funpack
-                  0x0004be                  ___subsf3
                   0x0004be                  ___subsf3x
+                  0x0004be                  ___subsf3
                   0x0004d0                  ___addsf3
                   0x0004d0                  ___addsf3x
                   0x00069a                  ___divsf3
@@ -242,101 +242,104 @@ External Symbols in Program Memory (by address):
                   0x000d9a                  _FreeMono12pt7bBitmaps
                   0x00134e                  _FreeMono12pt7bGlyphs
                   0x001646                  _FreeMono12pt7b
-                  0x001666                  _set_buffer_size
-                  0x001678                  _fill_buffer
-                  0x0016c4                  _draw_pixel
-                  0x00175e                  _draw_vline
-                  0x0017b0                  _draw_hline
-                  0x001802                  _draw_line
-                  0x00190e                  _draw_AA_line
-                  0x001eaa                  _draw_rect
-                  0x001eec                  _draw_rect_filled
-                  0x001f2c                  _draw_circle
-                  0x002076                  _draw_bitmap_8bpp
-                  0x0020d4                  _draw_bitmap_4bpp
-                  0x002166                  _select_font
-                  0x002172                  _draw_char
-                  0x002256                  _draw_text
-                  0x0022a0                  _send_buffer_to_OLED
-                  0x0022c8                  _SSD1322_API_command
-                  0x0022da                  _SSD1322_API_data
-                  0x0022ec                  _SSD1322_API_init
-                  0x0023ae                  _SSD1322_API_set_display_mode
-                  0x0023e2                  _SSD1322_API_sleep_on
-                  0x0023ec                  _SSD1322_API_sleep_off
-                  0x0023f6                  _SSD1322_API_set_contrast
-                  0x002406                  _SSD1322_API_set_brightness
-                  0x002418                  _SSD1322_API_custom_grayscale
-                  0x002454                  _SSD1322_API_default_grayscale
-                  0x00245e                  _SSD1322_API_set_window
-                  0x002488                  _SSD1322_API_send_buffer
-                  0x0024a6                  _SPI1_Initialize
-                  0x0024b8                  _SPI1_Exchange
-                  0x0024e8                  _SPI1_ExchangeBuffer
-                  0x0025b2                  _SPI1_Exchange8bit
-                  0x0025c2                  _SPI1_Exchange8bitBuffer
-                  0x0025d6                  _SPI1_StatusGet
-                  0x0025de                  _RESET_GetCause
-                  0x0026ea                  _RESET_CauseClearAll
-                  0x0026f2                  _SSD1322_HW_drive_CS_high
-                  0x0026fa                  _SSD1322_HW_drive_CS_low
-                  0x002702                  _SSD1322_HW_drive_RESET_high
-                  0x00270a                  _SSD1322_HW_drive_RESET_low
-                  0x002712                  _SSD1322_HW_drive_DC_high
-                  0x00271a                  _SSD1322_HW_drive_DC_low
-                  0x002722                  _SSD1322_HW_SPI_send_byte
-                  0x002730                  _SSD1322_HW_SPI_send_array
-                  0x002762                  _SSD1322_HW_msDelay
-                  0x00278c                  _PIN_MANAGER_Initialize
-                  0x0027fa                  _main
-                  0x002868                  _DELAY_milliseconds
-                  0x00288a                  _DELAY_microseconds
-                  0x0028be                  _CLOCK_Initialize
-                  0x002918                  _SYSTEM_Initialize
-                  0x002952                  ___delay32
-                  0x002986                  _INTERRUPT_Initialize
+                  0x001650                  _tom_and_jerry
+                  0x0032d0                  _gb110256x56
+                  0x004ed0                  _bertone256x35
+                  0x006066                  _set_buffer_size
+                  0x006078                  _fill_buffer
+                  0x0060c4                  _draw_pixel
+                  0x00615e                  _draw_vline
+                  0x0061b0                  _draw_hline
+                  0x006202                  _draw_line
+                  0x00630e                  _draw_AA_line
+                  0x0068aa                  _draw_rect
+                  0x0068ec                  _draw_rect_filled
+                  0x00692c                  _draw_circle
+                  0x006a76                  _draw_bitmap_8bpp
+                  0x006ad4                  _draw_bitmap_4bpp
+                  0x006b66                  _select_font
+                  0x006b72                  _draw_char
+                  0x006c56                  _draw_text
+                  0x006ca0                  _send_buffer_to_OLED
+                  0x006cc8                  _SSD1322_API_command
+                  0x006cda                  _SSD1322_API_data
+                  0x006cec                  _SSD1322_API_init
+                  0x006dae                  _SSD1322_API_set_display_mode
+                  0x006de2                  _SSD1322_API_sleep_on
+                  0x006dec                  _SSD1322_API_sleep_off
+                  0x006df6                  _SSD1322_API_set_contrast
+                  0x006e06                  _SSD1322_API_set_brightness
+                  0x006e18                  _SSD1322_API_custom_grayscale
+                  0x006e54                  _SSD1322_API_default_grayscale
+                  0x006e5e                  _SSD1322_API_set_window
+                  0x006e88                  _SSD1322_API_send_buffer
+                  0x006ea6                  _SPI1_Initialize
+                  0x006eb8                  _SPI1_Exchange
+                  0x006ee8                  _SPI1_ExchangeBuffer
+                  0x006fb2                  _SPI1_Exchange8bit
+                  0x006fc2                  _SPI1_Exchange8bitBuffer
+                  0x006fd6                  _SPI1_StatusGet
+                  0x006fde                  _RESET_GetCause
+                  0x0070ea                  _RESET_CauseClearAll
+                  0x0070f2                  _main
+                  0x0071c6                  _SSD1322_HW_drive_CS_high
+                  0x0071ce                  _SSD1322_HW_drive_CS_low
+                  0x0071d6                  _SSD1322_HW_drive_RESET_high
+                  0x0071de                  _SSD1322_HW_drive_RESET_low
+                  0x0071e6                  _SSD1322_HW_drive_DC_high
+                  0x0071ee                  _SSD1322_HW_drive_DC_low
+                  0x0071f6                  _SSD1322_HW_SPI_send_byte
+                  0x007204                  _SSD1322_HW_SPI_send_array
+                  0x007236                  _SSD1322_HW_msDelay
+                  0x007260                  _PIN_MANAGER_Initialize
+                  0x0072ce                  _DELAY_milliseconds
+                  0x0072f0                  _DELAY_microseconds
+                  0x007324                  _CLOCK_Initialize
+                  0x00737e                  _SYSTEM_Initialize
+                  0x0073b8                  ___delay32
+                  0x0073ec                  _INTERRUPT_Initialize
                   0x02ab80                  __FSEC.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x0028be                  _CLOCK_Initialize
-                  0x00288a                  _DELAY_microseconds
-                  0x002868                  _DELAY_milliseconds
+                  0x007324                  _CLOCK_Initialize
+                  0x0072f0                  _DELAY_microseconds
+                  0x0072ce                  _DELAY_milliseconds
                   0x001646                  _FreeMono12pt7b
                   0x000d9a                  _FreeMono12pt7bBitmaps
                   0x00134e                  _FreeMono12pt7bGlyphs
-                  0x002986                  _INTERRUPT_Initialize
-                  0x00278c                  _PIN_MANAGER_Initialize
-                  0x0026ea                  _RESET_CauseClearAll
-                  0x0025de                  _RESET_GetCause
-                  0x0024b8                  _SPI1_Exchange
-                  0x0025b2                  _SPI1_Exchange8bit
-                  0x0025c2                  _SPI1_Exchange8bitBuffer
-                  0x0024e8                  _SPI1_ExchangeBuffer
-                  0x0024a6                  _SPI1_Initialize
-                  0x0025d6                  _SPI1_StatusGet
-                  0x0022c8                  _SSD1322_API_command
-                  0x002418                  _SSD1322_API_custom_grayscale
-                  0x0022da                  _SSD1322_API_data
-                  0x002454                  _SSD1322_API_default_grayscale
-                  0x0022ec                  _SSD1322_API_init
-                  0x002488                  _SSD1322_API_send_buffer
-                  0x002406                  _SSD1322_API_set_brightness
-                  0x0023f6                  _SSD1322_API_set_contrast
-                  0x0023ae                  _SSD1322_API_set_display_mode
-                  0x00245e                  _SSD1322_API_set_window
-                  0x0023ec                  _SSD1322_API_sleep_off
-                  0x0023e2                  _SSD1322_API_sleep_on
-                  0x002730                  _SSD1322_HW_SPI_send_array
-                  0x002722                  _SSD1322_HW_SPI_send_byte
-                  0x0026f2                  _SSD1322_HW_drive_CS_high
-                  0x0026fa                  _SSD1322_HW_drive_CS_low
-                  0x002712                  _SSD1322_HW_drive_DC_high
-                  0x00271a                  _SSD1322_HW_drive_DC_low
-                  0x002702                  _SSD1322_HW_drive_RESET_high
-                  0x00270a                  _SSD1322_HW_drive_RESET_low
-                  0x002762                  _SSD1322_HW_msDelay
-                  0x002918                  _SYSTEM_Initialize
+                  0x0073ec                  _INTERRUPT_Initialize
+                  0x007260                  _PIN_MANAGER_Initialize
+                  0x0070ea                  _RESET_CauseClearAll
+                  0x006fde                  _RESET_GetCause
+                  0x006eb8                  _SPI1_Exchange
+                  0x006fb2                  _SPI1_Exchange8bit
+                  0x006fc2                  _SPI1_Exchange8bitBuffer
+                  0x006ee8                  _SPI1_ExchangeBuffer
+                  0x006ea6                  _SPI1_Initialize
+                  0x006fd6                  _SPI1_StatusGet
+                  0x006cc8                  _SSD1322_API_command
+                  0x006e18                  _SSD1322_API_custom_grayscale
+                  0x006cda                  _SSD1322_API_data
+                  0x006e54                  _SSD1322_API_default_grayscale
+                  0x006cec                  _SSD1322_API_init
+                  0x006e88                  _SSD1322_API_send_buffer
+                  0x006e06                  _SSD1322_API_set_brightness
+                  0x006df6                  _SSD1322_API_set_contrast
+                  0x006dae                  _SSD1322_API_set_display_mode
+                  0x006e5e                  _SSD1322_API_set_window
+                  0x006dec                  _SSD1322_API_sleep_off
+                  0x006de2                  _SSD1322_API_sleep_on
+                  0x007204                  _SSD1322_HW_SPI_send_array
+                  0x0071f6                  _SSD1322_HW_SPI_send_byte
+                  0x0071c6                  _SSD1322_HW_drive_CS_high
+                  0x0071ce                  _SSD1322_HW_drive_CS_low
+                  0x0071e6                  _SSD1322_HW_drive_DC_high
+                  0x0071ee                  _SSD1322_HW_drive_DC_low
+                  0x0071d6                  _SSD1322_HW_drive_RESET_high
+                  0x0071de                  _SSD1322_HW_drive_RESET_low
+                  0x007236                  _SSD1322_HW_msDelay
+                  0x00737e                  _SYSTEM_Initialize
                   0x00033c                  __AddressError
                   0x00037c                  __DMACError
                   0x000408                  __DefaultInterrupt
@@ -348,7 +351,7 @@ External Symbols in Program Memory (by name):
                   0x00031a                  __StackError
                   0x0004d0                  ___addsf3
                   0x0004d0                  ___addsf3x
-                  0x002952                  ___delay32
+                  0x0073b8                  ___delay32
                   0x00069a                  ___divsf3
                   0x00069a                  ___divsf3x
                   0x00040e                  ___eqsf2
@@ -381,25 +384,28 @@ External Symbols in Program Memory (by name):
                   0x000a16                  __typef
                   0x0009b8                  __unpackdnrmf
                   0x000b02                  __unpackf
-                  0x00190e                  _draw_AA_line
-                  0x0020d4                  _draw_bitmap_4bpp
-                  0x002076                  _draw_bitmap_8bpp
-                  0x002172                  _draw_char
-                  0x001f2c                  _draw_circle
-                  0x0017b0                  _draw_hline
-                  0x001802                  _draw_line
-                  0x0016c4                  _draw_pixel
-                  0x001eaa                  _draw_rect
-                  0x001eec                  _draw_rect_filled
-                  0x002256                  _draw_text
-                  0x00175e                  _draw_vline
-                  0x001678                  _fill_buffer
+                  0x004ed0                  _bertone256x35
+                  0x00630e                  _draw_AA_line
+                  0x006ad4                  _draw_bitmap_4bpp
+                  0x006a76                  _draw_bitmap_8bpp
+                  0x006b72                  _draw_char
+                  0x00692c                  _draw_circle
+                  0x0061b0                  _draw_hline
+                  0x006202                  _draw_line
+                  0x0060c4                  _draw_pixel
+                  0x0068aa                  _draw_rect
+                  0x0068ec                  _draw_rect_filled
+                  0x006c56                  _draw_text
+                  0x00615e                  _draw_vline
+                  0x006078                  _fill_buffer
                   0x000c78                  _floorf
-                  0x0027fa                  _main
+                  0x0032d0                  _gb110256x56
+                  0x0070f2                  _main
                   0x000cf4                  _roundf
-                  0x002166                  _select_font
-                  0x0022a0                  _send_buffer_to_OLED
-                  0x001666                  _set_buffer_size
+                  0x006b66                  _select_font
+                  0x006ca0                  _send_buffer_to_OLED
+                  0x006066                  _set_buffer_size
+                  0x001650                  _tom_and_jerry
 
 Memory Configuration
 
@@ -614,142 +620,95 @@ __FALTREG
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x4bb4
+.debug_info       0x000000       0x1a14
  *(.debug_info)
- .debug_info      0x000000        0x636 build/default/production/mcc_generated_files/traps.o
- .debug_info      0x000636        0x508 build/default/production/mcc_generated_files/system.o
- .debug_info      0x000b3e        0x2d4 build/default/production/mcc_generated_files/clock.o
- .debug_info      0x000e12        0x164 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_info      0x000f76        0x498 build/default/production/mcc_generated_files/reset.o
- .debug_info      0x00140e        0x675 build/default/production/mcc_generated_files/pin_manager.o
- .debug_info      0x001a83        0x1d2 build/default/production/mcc_generated_files/delay.o
- .debug_info      0x001c55        0x86f build/default/production/mcc_generated_files/spi1.o
- .debug_info      0x0024c4        0x34e build/default/production/main.o
- .debug_info      0x002812        0x4e4 build/default/production/_ext/23415553/SSD1322_API.o
- .debug_info      0x002cf6        0x4c7 build/default/production/_ext/23415553/SSD1322_HW_Driver.o
- .debug_info      0x0031bd        0xdbf build/default/production/_ext/23415553/SSD1322_GFX.o
- .debug_info      0x003f7c         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.EP_o)
- .debug_info      0x004009         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.EP_o)
- .debug_info      0x004096         0x90 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.EP_o)
- .debug_info      0x004126         0x8f c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.EP_o)
- .debug_info      0x0041b5         0x91 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
- .debug_info      0x004246         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
- .debug_info      0x0042d3         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
- .debug_info      0x004370         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
- .debug_info      0x00440d         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
- .debug_info      0x0044aa         0xa0 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
- .debug_info      0x00454a         0xa2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
- .debug_info      0x0045ec         0x9c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
- .debug_info      0x004688         0x9f c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
- .debug_info      0x004727         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
- .debug_info      0x0047c4         0x9e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
- .debug_info      0x004862         0x8e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.EP_o)
- .debug_info      0x0048f0         0x8f c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.EP_o)
- .debug_info      0x00497f         0x91 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
- .debug_info      0x004a10         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
- .debug_info      0x004a9b         0x8e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.EP_o)
- .debug_info      0x004b29         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.EP_o)
+ .debug_info      0x000000        0x86f build/default/production/mcc_generated_files/spi1.o
+ .debug_info      0x00086f        0x56d build/default/production/main.o
+ .debug_info      0x000ddc         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.EP_o)
+ .debug_info      0x000e69         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.EP_o)
+ .debug_info      0x000ef6         0x90 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.EP_o)
+ .debug_info      0x000f86         0x8f c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.EP_o)
+ .debug_info      0x001015         0x91 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
+ .debug_info      0x0010a6         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
+ .debug_info      0x001133         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
+ .debug_info      0x0011d0         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
+ .debug_info      0x00126d         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
+ .debug_info      0x00130a         0xa0 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
+ .debug_info      0x0013aa         0xa2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
+ .debug_info      0x00144c         0x9c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
+ .debug_info      0x0014e8         0x9f c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
+ .debug_info      0x001587         0x9d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
+ .debug_info      0x001624         0x9e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
+ .debug_info      0x0016c2         0x8e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.EP_o)
+ .debug_info      0x001750         0x8f c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.EP_o)
+ .debug_info      0x0017df         0x91 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
+ .debug_info      0x001870         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
+ .debug_info      0x0018fb         0x8e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.EP_o)
+ .debug_info      0x001989         0x8b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.EP_o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0xb27
+.debug_abbrev     0x000000        0x435
  *(.debug_abbrev)
- .debug_abbrev    0x000000        0x10d build/default/production/mcc_generated_files/traps.o
- .debug_abbrev    0x00010d        0x114 build/default/production/mcc_generated_files/system.o
- .debug_abbrev    0x000221          0x1 build/default/production/mcc_generated_files/mcc.o
- .debug_abbrev    0x000222         0x59 build/default/production/mcc_generated_files/clock.o
- .debug_abbrev    0x00027b         0x34 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_abbrev    0x0002af         0xf6 build/default/production/mcc_generated_files/reset.o
- .debug_abbrev    0x0003a5         0x59 build/default/production/mcc_generated_files/pin_manager.o
- .debug_abbrev    0x0003fe         0x67 build/default/production/mcc_generated_files/delay.o
- .debug_abbrev    0x000465        0x158 build/default/production/mcc_generated_files/spi1.o
- .debug_abbrev    0x0005bd         0xf7 build/default/production/main.o
- .debug_abbrev    0x0006b4         0xcc build/default/production/_ext/23415553/SSD1322_API.o
- .debug_abbrev    0x000780         0xcf build/default/production/_ext/23415553/SSD1322_HW_Driver.o
- .debug_abbrev    0x00084f        0x134 build/default/production/_ext/23415553/SSD1322_GFX.o
- .debug_abbrev    0x000983         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.EP_o)
- .debug_abbrev    0x000997         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.EP_o)
- .debug_abbrev    0x0009ab         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.EP_o)
- .debug_abbrev    0x0009bf         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.EP_o)
- .debug_abbrev    0x0009d3         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
- .debug_abbrev    0x0009e7         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
- .debug_abbrev    0x0009fb         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
- .debug_abbrev    0x000a0f         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
- .debug_abbrev    0x000a23         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
- .debug_abbrev    0x000a37         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
- .debug_abbrev    0x000a4b         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
- .debug_abbrev    0x000a5f         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
- .debug_abbrev    0x000a73         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
- .debug_abbrev    0x000a87         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
- .debug_abbrev    0x000a9b         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
- .debug_abbrev    0x000aaf         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.EP_o)
- .debug_abbrev    0x000ac3         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.EP_o)
- .debug_abbrev    0x000ad7         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
- .debug_abbrev    0x000aeb         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
- .debug_abbrev    0x000aff         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.EP_o)
- .debug_abbrev    0x000b13         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.EP_o)
+ .debug_abbrev    0x000000        0x158 build/default/production/mcc_generated_files/spi1.o
+ .debug_abbrev    0x000158        0x139 build/default/production/main.o
+ .debug_abbrev    0x000291         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.EP_o)
+ .debug_abbrev    0x0002a5         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.EP_o)
+ .debug_abbrev    0x0002b9         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.EP_o)
+ .debug_abbrev    0x0002cd         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.EP_o)
+ .debug_abbrev    0x0002e1         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
+ .debug_abbrev    0x0002f5         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
+ .debug_abbrev    0x000309         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
+ .debug_abbrev    0x00031d         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
+ .debug_abbrev    0x000331         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
+ .debug_abbrev    0x000345         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
+ .debug_abbrev    0x000359         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
+ .debug_abbrev    0x00036d         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
+ .debug_abbrev    0x000381         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
+ .debug_abbrev    0x000395         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
+ .debug_abbrev    0x0003a9         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
+ .debug_abbrev    0x0003bd         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.EP_o)
+ .debug_abbrev    0x0003d1         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.EP_o)
+ .debug_abbrev    0x0003e5         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
+ .debug_abbrev    0x0003f9         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
+ .debug_abbrev    0x00040d         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.EP_o)
+ .debug_abbrev    0x000421         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.EP_o)
 
-.debug_line       0x000000       0x19cb
+.debug_line       0x000000        0xc96
  *(.debug_line)
- .debug_line      0x000000        0x16c build/default/production/mcc_generated_files/traps.o
- .debug_line      0x00016c        0x16e build/default/production/mcc_generated_files/system.o
- .debug_line      0x0002da         0x1a build/default/production/mcc_generated_files/mcc.o
- .debug_line      0x0002f4        0x130 build/default/production/mcc_generated_files/clock.o
- .debug_line      0x000424         0x55 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_line      0x000479        0x16f build/default/production/mcc_generated_files/reset.o
- .debug_line      0x0005e8        0x151 build/default/production/mcc_generated_files/pin_manager.o
- .debug_line      0x000739         0xa6 build/default/production/mcc_generated_files/delay.o
- .debug_line      0x0007df        0x170 build/default/production/mcc_generated_files/spi1.o
- .debug_line      0x00094f        0x186 build/default/production/main.o
- .debug_line      0x000ad5        0x19d build/default/production/_ext/23415553/SSD1322_API.o
- .debug_line      0x000c72        0x177 build/default/production/_ext/23415553/SSD1322_HW_Driver.o
- .debug_line      0x000de9        0x284 build/default/production/_ext/23415553/SSD1322_GFX.o
- .debug_line      0x00106d         0x37 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.EP_o)
- .debug_line      0x0010a4         0x56 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.EP_o)
- .debug_line      0x0010fa         0x53 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.EP_o)
- .debug_line      0x00114d         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.EP_o)
- .debug_line      0x001187         0x3b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
- .debug_line      0x0011c2         0x4a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
- .debug_line      0x00120c        0x136 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
- .debug_line      0x001342        0x124 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
- .debug_line      0x001466         0xcc c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
- .debug_line      0x001532         0x72 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
- .debug_line      0x0015a4         0x7a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
- .debug_line      0x00161e         0x5e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
- .debug_line      0x00167c         0x51 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
- .debug_line      0x0016cd         0x98 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
- .debug_line      0x001765         0x79 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
- .debug_line      0x0017de         0x1a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(errno.EP_o)
- .debug_line      0x0017f8         0x53 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.EP_o)
- .debug_line      0x00184b         0x47 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.EP_o)
- .debug_line      0x001892         0x6c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
- .debug_line      0x0018fe         0x5a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
- .debug_line      0x001958         0x3e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.EP_o)
- .debug_line      0x001996         0x35 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.EP_o)
+ .debug_line      0x000000        0x170 build/default/production/mcc_generated_files/spi1.o
+ .debug_line      0x000170        0x1c8 build/default/production/main.o
+ .debug_line      0x000338         0x37 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.EP_o)
+ .debug_line      0x00036f         0x56 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.EP_o)
+ .debug_line      0x0003c5         0x53 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.EP_o)
+ .debug_line      0x000418         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.EP_o)
+ .debug_line      0x000452         0x3b c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
+ .debug_line      0x00048d         0x4a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
+ .debug_line      0x0004d7        0x136 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
+ .debug_line      0x00060d        0x124 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
+ .debug_line      0x000731         0xcc c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
+ .debug_line      0x0007fd         0x72 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
+ .debug_line      0x00086f         0x7a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
+ .debug_line      0x0008e9         0x5e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
+ .debug_line      0x000947         0x51 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
+ .debug_line      0x000998         0x98 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
+ .debug_line      0x000a30         0x79 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
+ .debug_line      0x000aa9         0x1a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(errno.EP_o)
+ .debug_line      0x000ac3         0x53 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.EP_o)
+ .debug_line      0x000b16         0x47 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.EP_o)
+ .debug_line      0x000b5d         0x6c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
+ .debug_line      0x000bc9         0x5a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
+ .debug_line      0x000c23         0x3e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.EP_o)
+ .debug_line      0x000c61         0x35 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.EP_o)
 
-.debug_frame      0x000000        0x92c
+.debug_frame      0x000000         0xde
  *(.debug_frame)
- .debug_frame     0x000000        0x1fa build/default/production/mcc_generated_files/traps.o
- .debug_frame     0x0001fa         0x62 build/default/production/mcc_generated_files/system.o
- .debug_frame     0x00025c         0x2e build/default/production/mcc_generated_files/clock.o
- .debug_frame     0x00028a         0x2e build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_frame     0x0002b8        0x118 build/default/production/mcc_generated_files/reset.o
- .debug_frame     0x0003d0         0x2e build/default/production/mcc_generated_files/pin_manager.o
- .debug_frame     0x0003fe         0x48 build/default/production/mcc_generated_files/delay.o
- .debug_frame     0x000446         0xb0 build/default/production/mcc_generated_files/spi1.o
- .debug_frame     0x0004f6         0x2e build/default/production/main.o
- .debug_frame     0x000524        0x14c build/default/production/_ext/23415553/SSD1322_API.o
- .debug_frame     0x000670         0xfe build/default/production/_ext/23415553/SSD1322_HW_Driver.o
- .debug_frame     0x00076e        0x1be build/default/production/_ext/23415553/SSD1322_GFX.o
+ .debug_frame     0x000000         0xb0 build/default/production/mcc_generated_files/spi1.o
+ .debug_frame     0x0000b0         0x2e build/default/production/main.o
 
-.debug_str        0x000000        0x134
+.debug_str        0x000000         0xb7
  *(.debug_str)
- .debug_str       0x000000         0x24 build/default/production/mcc_generated_files/traps.o
- .debug_str       0x000024          0xc build/default/production/mcc_generated_files/system.o
- .debug_str       0x000030         0x17 build/default/production/mcc_generated_files/reset.o
- .debug_str       0x000047         0x5a build/default/production/mcc_generated_files/spi1.o
- .debug_str       0x0000a1         0x3a build/default/production/main.o
- .debug_str       0x0000db          0x9 build/default/production/_ext/23415553/SSD1322_HW_Driver.o
- .debug_str       0x0000e4         0x50 build/default/production/_ext/23415553/SSD1322_GFX.o
+ .debug_str       0x000000         0x5a build/default/production/mcc_generated_files/spi1.o
+ .debug_str       0x00005a         0x5d build/default/production/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -758,104 +717,64 @@ __FALTREG
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x69d
+                  0x000000        0x12a
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0xa4 build/default/production/mcc_generated_files/traps.o
+                  0x000000         0x95 build/default/production/mcc_generated_files/spi1.o
  .debug_pubnames
-                  0x0000a4         0x28 build/default/production/mcc_generated_files/system.o
- .debug_pubnames
-                  0x0000cc         0x27 build/default/production/mcc_generated_files/clock.o
- .debug_pubnames
-                  0x0000f3         0x2b build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_pubnames
-                  0x00011e         0x54 build/default/production/mcc_generated_files/reset.o
- .debug_pubnames
-                  0x000172         0x2d build/default/production/mcc_generated_files/pin_manager.o
- .debug_pubnames
-                  0x00019f         0x40 build/default/production/mcc_generated_files/delay.o
- .debug_pubnames
-                  0x0001df         0x95 build/default/production/mcc_generated_files/spi1.o
- .debug_pubnames
-                  0x000274         0x61 build/default/production/main.o
- .debug_pubnames
-                  0x0002d5        0x15e build/default/production/_ext/23415553/SSD1322_API.o
- .debug_pubnames
-                  0x000433        0x115 build/default/production/_ext/23415553/SSD1322_HW_Driver.o
- .debug_pubnames
-                  0x000548        0x155 build/default/production/_ext/23415553/SSD1322_GFX.o
+                  0x000095         0x95 build/default/production/main.o
 
 .debug_ranges
  *(.debug_ranges)
 
-.debug_aranges    0x000000        0x3f8
+.debug_aranges    0x000000        0x2d0
  *(.debug_aranges)
  .debug_aranges
-                  0x000000         0x50 build/default/production/mcc_generated_files/traps.o
+                  0x000000         0x18 build/default/production/mcc_generated_files/spi1.o
  .debug_aranges
-                  0x000050         0x18 build/default/production/mcc_generated_files/system.o
+                  0x000018         0x18 build/default/production/main.o
  .debug_aranges
-                  0x000068         0x18 build/default/production/mcc_generated_files/clock.o
+                  0x000030         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.EP_o)
  .debug_aranges
-                  0x000080         0x18 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x000050         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.EP_o)
  .debug_aranges
-                  0x000098         0x18 build/default/production/mcc_generated_files/reset.o
+                  0x000070         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.EP_o)
  .debug_aranges
-                  0x0000b0         0x18 build/default/production/mcc_generated_files/pin_manager.o
+                  0x000090         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.EP_o)
  .debug_aranges
-                  0x0000c8         0x18 build/default/production/mcc_generated_files/delay.o
+                  0x0000b0         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
  .debug_aranges
-                  0x0000e0         0x18 build/default/production/mcc_generated_files/spi1.o
+                  0x0000d0         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
  .debug_aranges
-                  0x0000f8         0x18 build/default/production/main.o
+                  0x0000f0         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
  .debug_aranges
-                  0x000110         0x18 build/default/production/_ext/23415553/SSD1322_API.o
+                  0x000110         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
  .debug_aranges
-                  0x000128         0x18 build/default/production/_ext/23415553/SSD1322_HW_Driver.o
+                  0x000130         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
  .debug_aranges
-                  0x000140         0x18 build/default/production/_ext/23415553/SSD1322_GFX.o
+                  0x000150         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
  .debug_aranges
-                  0x000158         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.EP_o)
+                  0x000170         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
  .debug_aranges
-                  0x000178         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.EP_o)
+                  0x000190         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
  .debug_aranges
-                  0x000198         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.EP_o)
+                  0x0001b0         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
  .debug_aranges
-                  0x0001b8         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.EP_o)
+                  0x0001d0         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
  .debug_aranges
-                  0x0001d8         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
+                  0x0001f0         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
  .debug_aranges
-                  0x0001f8         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
+                  0x000210         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.EP_o)
  .debug_aranges
-                  0x000218         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(addsf3x.EP_o)
+                  0x000230         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.EP_o)
  .debug_aranges
-                  0x000238         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(divsf3x.EP_o)
+                  0x000250         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
  .debug_aranges
-                  0x000258         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsf3x.EP_o)
+                  0x000270         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
  .debug_aranges
-                  0x000278         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(dnrmpackfx.EP_o)
+                  0x000290         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.EP_o)
  .debug_aranges
-                  0x000298         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackdnrmfx.EP_o)
- .debug_aranges
-                  0x0002b8         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(typefx.EP_o)
- .debug_aranges
-                  0x0002d8         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(propnanfx.EP_o)
- .debug_aranges
-                  0x0002f8         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(spackfx.EP_o)
- .debug_aranges
-                  0x000318         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(unpackfx.EP_o)
- .debug_aranges
-                  0x000338         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.EP_o)
- .debug_aranges
-                  0x000358         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.EP_o)
- .debug_aranges
-                  0x000378         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
- .debug_aranges
-                  0x000398         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
- .debug_aranges
-                  0x0003b8         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.EP_o)
- .debug_aranges
-                  0x0003d8         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.EP_o)
+                  0x0002b0         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.EP_o)
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -2308,97 +2227,77 @@ LOAD /CW/_FSEC
 LOAD default_isr
 LOAD data_init
 
-.debug_pubtypes
-                  0x0003f8        0x392
- .debug_pubtypes
-                  0x0003f8         0x94 build/default/production/mcc_generated_files/traps.o
- .debug_pubtypes
-                  0x00048c         0x72 build/default/production/mcc_generated_files/system.o
- .debug_pubtypes
-                  0x0004fe         0x2b build/default/production/mcc_generated_files/clock.o
- .debug_pubtypes
-                  0x000529         0x12 build/default/production/mcc_generated_files/interrupt_manager.o
- .debug_pubtypes
-                  0x00053b         0x42 build/default/production/mcc_generated_files/reset.o
- .debug_pubtypes
-                  0x00057d         0x1f build/default/production/mcc_generated_files/pin_manager.o
- .debug_pubtypes
-                  0x00059c         0x1f build/default/production/mcc_generated_files/delay.o
- .debug_pubtypes
-                  0x0005bb         0x85 build/default/production/mcc_generated_files/spi1.o
- .debug_pubtypes
-                  0x000640         0x4f build/default/production/main.o
- .debug_pubtypes
-                  0x00068f         0x3e build/default/production/_ext/23415553/SSD1322_API.o
- .debug_pubtypes
-                  0x0006cd         0x55 build/default/production/_ext/23415553/SSD1322_HW_Driver.o
- .debug_pubtypes
-                  0x000722         0x68 build/default/production/_ext/23415553/SSD1322_GFX.o
-
 __c30_signature
-                  0x00078a         0xba
+                  0x0002d0         0xba
  __c30_signature
-                  0x00078a          0x6 build/default/production/mcc_generated_files/traps.o
+                  0x0002d0          0x6 build/default/production/mcc_generated_files/traps.o
  __c30_signature
-                  0x000790          0x6 build/default/production/mcc_generated_files/system.o
+                  0x0002d6          0x6 build/default/production/mcc_generated_files/system.o
  __c30_signature
-                  0x000796          0x6 build/default/production/mcc_generated_files/mcc.o
+                  0x0002dc          0x6 build/default/production/mcc_generated_files/mcc.o
  __c30_signature
-                  0x00079c          0x6 build/default/production/mcc_generated_files/clock.o
+                  0x0002e2          0x6 build/default/production/mcc_generated_files/clock.o
  __c30_signature
-                  0x0007a2          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x0002e8          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
  __c30_signature
-                  0x0007a8          0x6 build/default/production/mcc_generated_files/reset.o
+                  0x0002ee          0x6 build/default/production/mcc_generated_files/reset.o
  __c30_signature
-                  0x0007ae          0x6 build/default/production/mcc_generated_files/pin_manager.o
+                  0x0002f4          0x6 build/default/production/mcc_generated_files/pin_manager.o
  __c30_signature
-                  0x0007b4          0x6 build/default/production/mcc_generated_files/delay.o
+                  0x0002fa          0x6 build/default/production/mcc_generated_files/delay.o
  __c30_signature
-                  0x0007ba          0x6 build/default/production/mcc_generated_files/spi1.o
+                  0x000300          0x6 build/default/production/mcc_generated_files/spi1.o
  __c30_signature
-                  0x0007c0          0x6 build/default/production/main.o
+                  0x000306          0x6 build/default/production/main.o
  __c30_signature
-                  0x0007c6          0x6 build/default/production/_ext/23415553/SSD1322_API.o
+                  0x00030c          0x6 build/default/production/_ext/23415553/SSD1322_API.o
  __c30_signature
-                  0x0007cc          0x6 build/default/production/_ext/23415553/SSD1322_HW_Driver.o
+                  0x000312          0x6 build/default/production/_ext/23415553/SSD1322_HW_Driver.o
  __c30_signature
-                  0x0007d2          0x6 build/default/production/_ext/23415553/SSD1322_GFX.o
+                  0x000318          0x6 build/default/production/_ext/23415553/SSD1322_GFX.o
  __c30_signature
-                  0x0007d8          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_extendedep.o)
+                  0x00031e          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_extendedep.o)
  __c30_signature
-                  0x0007de          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_extended.o)
+                  0x000324          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_extended.o)
  __c30_signature
-                  0x0007e4          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ep.Meo)
+                  0x00032a          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ep.Meo)
  __c30_signature
-                  0x0007ea          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.EP_o)
+                  0x000330          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(feqltle.EP_o)
  __c30_signature
-                  0x0007f0          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.EP_o)
+                  0x000336          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixsfsi.EP_o)
  __c30_signature
-                  0x0007f6          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.EP_o)
+                  0x00033c          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fixunssfsi.EP_o)
  __c30_signature
-                  0x0007fc          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.EP_o)
+                  0x000342          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatsisf.EP_o)
  __c30_signature
-                  0x000802          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
+                  0x000348          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatunsisf.EP_o)
  __c30_signature
-                  0x000808          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
+                  0x00034e          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.EP_o)
  __c30_signature
-                  0x00080e          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(errno.EP_o)
+                  0x000354          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(errno.EP_o)
  __c30_signature
-                  0x000814          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.EP_o)
+                  0x00035a          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fcompare.EP_o)
  __c30_signature
-                  0x00081a          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.EP_o)
+                  0x000360          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatdisf.EP_o)
  __c30_signature
-                  0x000820          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
+                  0x000366          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(floatundisf.EP_o)
  __c30_signature
-                  0x000826          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
+                  0x00036c          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fpack.EP_o)
  __c30_signature
-                  0x00082c          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.EP_o)
+                  0x000372          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack2.EP_o)
  __c30_signature
-                  0x000832          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libm-elf.a(floorf.EP_o)
+                  0x000378          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libm-elf.a(floorf.EP_o)
  __c30_signature
-                  0x000838          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libm-elf.a(roundf.EP_o)
+                  0x00037e          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libm-elf.a(roundf.EP_o)
  __c30_signature
-                  0x00083e          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.EP_o)
+                  0x000384          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(fgtge.EP_o)
+
+.debug_pubtypes
+                  0x00038a         0xf1
+ .debug_pubtypes
+                  0x00038a         0x85 build/default/production/mcc_generated_files/spi1.o
+ .debug_pubtypes
+                  0x00040f         0x6c build/default/production/main.o
 
 .ndata              0x1000          0x6
  .ndata             0x1000          0x4 build/default/production/_ext/23415553/SSD1322_GFX.o
@@ -2502,85 +2401,88 @@ __c30_signature
 .config_BSLIM     0x02ab90          0x2
  .config_BSLIM    0x02ab90          0x2 build/default/production/mcc_generated_files/system.o
 
-.const              0x8d9a        0x8cc load address 0x000d9a  
- .const             0x8d9a        0x8cc build/default/production/main.o
+.const              0x8d9a       0x52cc load address 0x000d9a  
+ .const             0x8d9a       0x52cc build/default/production/main.o
                     0x8d9a                  _FreeMono12pt7bBitmaps
                     0x934e                  _FreeMono12pt7bGlyphs
                     0x9646                  _FreeMono12pt7b
+                    0x9650                  _tom_and_jerry
+                    0xb2d0                  _gb110256x56
+                    0xced0                  _bertone256x35
 
-.text             0x001666       0x12c6
- .text            0x001666        0xc62 build/default/production/_ext/23415553/SSD1322_GFX.o
-                  0x001666                  _set_buffer_size
-                  0x001678                  _fill_buffer
-                  0x0016c4                  _draw_pixel
-                  0x00175e                  _draw_vline
-                  0x0017b0                  _draw_hline
-                  0x001802                  _draw_line
-                  0x00190e                  _draw_AA_line
-                  0x001eaa                  _draw_rect
-                  0x001eec                  _draw_rect_filled
-                  0x001f2c                  _draw_circle
-                  0x002076                  _draw_bitmap_8bpp
-                  0x0020d4                  _draw_bitmap_4bpp
-                  0x002166                  _select_font
-                  0x002172                  _draw_char
-                  0x002256                  _draw_text
-                  0x0022a0                  _send_buffer_to_OLED
- .text            0x0022c8        0x1de build/default/production/_ext/23415553/SSD1322_API.o
-                  0x0022c8                  _SSD1322_API_command
-                  0x0022da                  _SSD1322_API_data
-                  0x0022ec                  _SSD1322_API_init
-                  0x0023ae                  _SSD1322_API_set_display_mode
-                  0x0023e2                  _SSD1322_API_sleep_on
-                  0x0023ec                  _SSD1322_API_sleep_off
-                  0x0023f6                  _SSD1322_API_set_contrast
-                  0x002406                  _SSD1322_API_set_brightness
-                  0x002418                  _SSD1322_API_custom_grayscale
-                  0x002454                  _SSD1322_API_default_grayscale
-                  0x00245e                  _SSD1322_API_set_window
-                  0x002488                  _SSD1322_API_send_buffer
- .text            0x0024a6        0x138 build/default/production/mcc_generated_files/spi1.o
-                  0x0024a6                  _SPI1_Initialize
-                  0x0024b8                  _SPI1_Exchange
-                  0x0024e8                  _SPI1_ExchangeBuffer
-                  0x0025b2                  _SPI1_Exchange8bit
-                  0x0025c2                  _SPI1_Exchange8bitBuffer
-                  0x0025d6                  _SPI1_StatusGet
- .text            0x0025de        0x114 build/default/production/mcc_generated_files/reset.o
-                  0x0025de                  _RESET_GetCause
-                  0x0025e6                  _RESET_CauseHandler
-                  0x0026ea                  _RESET_CauseClearAll
- .text            0x0026f2         0x9a build/default/production/_ext/23415553/SSD1322_HW_Driver.o
-                  0x0026f2                  _SSD1322_HW_drive_CS_high
-                  0x0026fa                  _SSD1322_HW_drive_CS_low
-                  0x002702                  _SSD1322_HW_drive_RESET_high
-                  0x00270a                  _SSD1322_HW_drive_RESET_low
-                  0x002712                  _SSD1322_HW_drive_DC_high
-                  0x00271a                  _SSD1322_HW_drive_DC_low
-                  0x002722                  _SSD1322_HW_SPI_send_byte
-                  0x002730                  _SSD1322_HW_SPI_send_array
-                  0x002762                  _SSD1322_HW_msDelay
- .text            0x00278c         0x6e build/default/production/mcc_generated_files/pin_manager.o
-                  0x00278c                  _PIN_MANAGER_Initialize
- .text            0x0027fa         0x6e build/default/production/main.o
-                  0x0027fa                  _main
- .text            0x002868         0x56 build/default/production/mcc_generated_files/delay.o
-                  0x002868                  _DELAY_milliseconds
-                  0x00288a                  _DELAY_microseconds
- .text            0x0028be         0x3c build/default/production/mcc_generated_files/clock.o
-                  0x0028be                  _CLOCK_Initialize
- .text            0x0028fa         0x32 build/default/production/mcc_generated_files/system.o
-                  0x002918                  _SYSTEM_Initialize
+.text             0x006066       0x132c
+ .text            0x006066        0xc62 build/default/production/_ext/23415553/SSD1322_GFX.o
+                  0x006066                  _set_buffer_size
+                  0x006078                  _fill_buffer
+                  0x0060c4                  _draw_pixel
+                  0x00615e                  _draw_vline
+                  0x0061b0                  _draw_hline
+                  0x006202                  _draw_line
+                  0x00630e                  _draw_AA_line
+                  0x0068aa                  _draw_rect
+                  0x0068ec                  _draw_rect_filled
+                  0x00692c                  _draw_circle
+                  0x006a76                  _draw_bitmap_8bpp
+                  0x006ad4                  _draw_bitmap_4bpp
+                  0x006b66                  _select_font
+                  0x006b72                  _draw_char
+                  0x006c56                  _draw_text
+                  0x006ca0                  _send_buffer_to_OLED
+ .text            0x006cc8        0x1de build/default/production/_ext/23415553/SSD1322_API.o
+                  0x006cc8                  _SSD1322_API_command
+                  0x006cda                  _SSD1322_API_data
+                  0x006cec                  _SSD1322_API_init
+                  0x006dae                  _SSD1322_API_set_display_mode
+                  0x006de2                  _SSD1322_API_sleep_on
+                  0x006dec                  _SSD1322_API_sleep_off
+                  0x006df6                  _SSD1322_API_set_contrast
+                  0x006e06                  _SSD1322_API_set_brightness
+                  0x006e18                  _SSD1322_API_custom_grayscale
+                  0x006e54                  _SSD1322_API_default_grayscale
+                  0x006e5e                  _SSD1322_API_set_window
+                  0x006e88                  _SSD1322_API_send_buffer
+ .text            0x006ea6        0x138 build/default/production/mcc_generated_files/spi1.o
+                  0x006ea6                  _SPI1_Initialize
+                  0x006eb8                  _SPI1_Exchange
+                  0x006ee8                  _SPI1_ExchangeBuffer
+                  0x006fb2                  _SPI1_Exchange8bit
+                  0x006fc2                  _SPI1_Exchange8bitBuffer
+                  0x006fd6                  _SPI1_StatusGet
+ .text            0x006fde        0x114 build/default/production/mcc_generated_files/reset.o
+                  0x006fde                  _RESET_GetCause
+                  0x006fe6                  _RESET_CauseHandler
+                  0x0070ea                  _RESET_CauseClearAll
+ .text            0x0070f2         0xd4 build/default/production/main.o
+                  0x0070f2                  _main
+ .text            0x0071c6         0x9a build/default/production/_ext/23415553/SSD1322_HW_Driver.o
+                  0x0071c6                  _SSD1322_HW_drive_CS_high
+                  0x0071ce                  _SSD1322_HW_drive_CS_low
+                  0x0071d6                  _SSD1322_HW_drive_RESET_high
+                  0x0071de                  _SSD1322_HW_drive_RESET_low
+                  0x0071e6                  _SSD1322_HW_drive_DC_high
+                  0x0071ee                  _SSD1322_HW_drive_DC_low
+                  0x0071f6                  _SSD1322_HW_SPI_send_byte
+                  0x007204                  _SSD1322_HW_SPI_send_array
+                  0x007236                  _SSD1322_HW_msDelay
+ .text            0x007260         0x6e build/default/production/mcc_generated_files/pin_manager.o
+                  0x007260                  _PIN_MANAGER_Initialize
+ .text            0x0072ce         0x56 build/default/production/mcc_generated_files/delay.o
+                  0x0072ce                  _DELAY_milliseconds
+                  0x0072f0                  _DELAY_microseconds
+ .text            0x007324         0x3c build/default/production/mcc_generated_files/clock.o
+                  0x007324                  _CLOCK_Initialize
+ .text            0x007360         0x32 build/default/production/mcc_generated_files/system.o
+                  0x00737e                  _SYSTEM_Initialize
 
-.dinit            0x00292c         0x26
- .dinit           0x00292c         0x26 data_init
+.dinit            0x007392         0x26
+ .dinit           0x007392         0x26 data_init
 
-.init.delay32     0x002952         0x1c
- .init.delay32    0x002952         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ep.Meo)
-                  0x002952                  ___delay32
+.init.delay32     0x0073b8         0x1c
+ .init.delay32    0x0073b8         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32ep.Meo)
+                  0x0073b8                  ___delay32
 
-.text             0x00296e         0x1e
- .text            0x00296e         0x18 build/default/production/mcc_generated_files/traps.o
-                  0x00296e                  _TRAPS_halt_on_error
- .text            0x002986          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
-                  0x002986                  _INTERRUPT_Initialize
+.text             0x0073d4         0x1e
+ .text            0x0073d4         0x18 build/default/production/mcc_generated_files/traps.o
+                  0x0073d4                  _TRAPS_halt_on_error
+ .text            0x0073ec          0x6 build/default/production/mcc_generated_files/interrupt_manager.o
+                  0x0073ec                  _INTERRUPT_Initialize
