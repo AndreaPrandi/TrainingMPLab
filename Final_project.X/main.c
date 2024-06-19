@@ -74,19 +74,19 @@ int main(void) {
                 receivedMsg.data = receivedData;
 
                 if (CAN1_Receive(&receivedMsg)) {
-                    DELAY_milliseconds(100);
+                   // DELAY_milliseconds(100);
                     if (receivedMsg.msgId == 0x123) {
                        fill_buffer(frame_buffer, 0x00);
                       
                       
                         sprintf(text1, "Velocita: %d", receivedMsg.data[0]);  // Correct
-                        draw_text(frame_buffer, text1, 10, 20, 0x0F);  // Posizione e luminosit� possono essere aggiustate
+                        draw_text(frame_buffer, text1, 10, 20, 0x0F);  // Posizione e luminositï¿½ possono essere aggiustate
                         sprintf(text2, "rpm: %d", receivedMsg.data[1]);  // Correct
-                        draw_text(frame_buffer, text2, 10, 50, 0x0F);  // Posizione e luminosit� possono essere aggiustate
+                        draw_text(frame_buffer, text2, 10, 50, 0x0F);  // Posizione e luminositï¿½ possono essere aggiustate
                         led2_Toggle();
                         send_buffer_to_OLED(frame_buffer, 0, 0);
                         dati=SendCANMessage(12, messageData, sizeof(messageData));  // Invia il messaggio CAN
-                        DELAY_milliseconds(100);
+                        //DELAY_milliseconds(100);
                         led2_Toggle();   // Turn off LED3 if the ID doesn't match
 
                     }
@@ -94,11 +94,7 @@ int main(void) {
             }
             else{
                 
-                while (dati!=0)   
-                {
-                  DELAY_milliseconds(100);
-                  
-                }
+               
                 dati=SendCANMessage(45, messageData, sizeof(messageData));  // Invia il messaggio CAN
                 DELAY_milliseconds(100);
                 led2_Toggle();   // Turn off LED3 if the ID doesn't match
