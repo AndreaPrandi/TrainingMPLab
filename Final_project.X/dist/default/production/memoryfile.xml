@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/CAN_message.X.production.elf">
+  <executable name="dist/default/production/Final_project.X.production.elf">
     <memory name="data">
       <units>bytes</units>
       <length>16384</length>
@@ -11,8 +11,8 @@
     <memory name="program">
       <units>bytes</units>
       <length>261696</length>
-      <used>44013</used>
-      <free>217683</free>
+      <used>43896</used>
+      <free>217800</free>
     </memory>
   </executable>
 </project>

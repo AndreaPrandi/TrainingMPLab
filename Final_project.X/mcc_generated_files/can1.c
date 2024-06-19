@@ -55,9 +55,9 @@
 /* Valid options are 4, 6, 8, 12, 16, 24, or 32. */
 #define CAN1_MESSAGE_BUFFERS         32
               
-#define CAN1_FIFO_STARTING_BUFFER    0x1
+#define CAN1_FIFO_STARTING_BUFFER    0x2
 
-#define CAN1_TX_BUFFER_COUNT 1
+#define CAN1_TX_BUFFER_COUNT 2
 
 #define CAN1_RX_BUFFER_MSG_DATA_SIZE    8U   // CAN RX Buffer Message object data field size
 
@@ -235,7 +235,7 @@ void CAN1_Initialize(void)
     /* Set up the baud rate*/	
     C1CFG1 = 0x00;	//BRP TQ = (2 x 1)/FCAN; SJW 1 x TQ; 
     C1CFG2 = 0x198;	//WAKFIL disabled; SEG2PHTS Freely programmable; SEG2PH 2 x TQ; SEG1PH 4 x TQ; PRSEG 1 x TQ; SAM Once at the sample point; 
-    C1FCTRL = 0xC001;	//FSA Transmit/Receive Buffer TRB1; DMABS 32; 
+    C1FCTRL = 0xC002;	//FSA Transmit/Receive Buffer TRB2; DMABS 32; 
     C1FEN1 = 0x01;	//FLTEN8 disabled; FLTEN7 disabled; FLTEN9 disabled; FLTEN0 enabled; FLTEN2 disabled; FLTEN10 disabled; FLTEN1 disabled; FLTEN11 disabled; FLTEN4 disabled; FLTEN3 disabled; FLTEN6 disabled; FLTEN5 disabled; FLTEN12 disabled; FLTEN13 disabled; FLTEN14 disabled; FLTEN15 disabled; 
     C1CTRL1 = 0x00;	//CANCKS FOSC/2; CSIDL disabled; ABAT disabled; REQOP Sets Normal Operation Mode; WIN Uses buffer window; CANCAP disabled; 
 
@@ -281,7 +281,7 @@ void CAN1_Initialize(void)
 
     /*configure CAN1 Transmit/Receive buffer settings*/
     C1TR01CONbits.TXEN0 = 0x1; // Buffer 0 is a Transmit Buffer 
-    C1TR01CONbits.TXEN1 = 0x0; // Buffer 1 is a Receive Buffer 
+    C1TR01CONbits.TXEN1 = 0x1; // Buffer 1 is a Transmit Buffer 
     C1TR23CONbits.TXEN2 = 0x0; // Buffer 2 is a Receive Buffer 
     C1TR23CONbits.TXEN3 = 0x0; // Buffer 3 is a Receive Buffer 
     C1TR45CONbits.TXEN4 = 0x0; // Buffer 4 is a Receive Buffer 

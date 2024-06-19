@@ -1245,7 +1245,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN1" name="Fifo start point"/>
-         <value>Transmit/Receive Buffer TRB1</value>
+         <value>Transmit/Receive Buffer TRB2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN1" name="Filter Value"/>
@@ -1305,7 +1305,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN1" name="transmit buffer size"/>
-         <value>1</value>
+         <value>2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="ECAN1" registerAlias="CCFG1" settingAlias="BRP" alias="TQ = (2 x 1)/FCAN"/>
@@ -3669,7 +3669,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ECAN1" registerAlias="CFCTRL"/>
-         <value>49153</value>
+         <value>49154</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ECAN1" registerAlias="CFEN1"/>
@@ -3865,7 +3865,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ECAN1" registerAlias="CTR01CON"/>
-         <value>128</value>
+         <value>32896</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ECAN1" registerAlias="CTR23CON"/>
@@ -4021,7 +4021,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CFCTRL" settingAlias="FSA"/>
-         <value>Transmit/Receive Buffer TRB1</value>
+         <value>Transmit/Receive Buffer TRB2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CFEN1" settingAlias="FLTEN0"/>
@@ -4857,7 +4857,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CTR01CON" settingAlias="TXEN1"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CTR01CON" settingAlias="TXERR0"/>
@@ -14759,7 +14759,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\can1.c</file>
-         <hash>a60764eb5084c61be13501d4b3f27c10681422849acce1ba1e51d1de51c44d93</hash>
+         <hash>d6929d1f51aabdc8250cf97d59f15456bed75d9548c8593213527d07a64fb905</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\can1.h</file>
@@ -14815,7 +14815,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>305e721e8dec285daba00f04fb58a82ac06ea05c9cc743620c17ad3166f8db91</hash>
+         <hash>b750676d522bb4ac8dbaa3d04f6ca00b30c85e333e524c407ef0d1d6d0ebd61a</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\oc1.c</file>
@@ -14827,7 +14827,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>
-         <hash>c8e5394d6f49a831dbc5d5910520a5b8f0ead8cd57aa6795fdfc581eb04187ee</hash>
+         <hash>a134a9fac6eee42fa04ed78dcbe828b259426fa9cb48d4cba1cedb82ab922e37</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
@@ -14855,7 +14855,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>439a51b5239afbd94be68e9691132e47edb20f5821011265efb759e577232e27</hash>
+         <hash>b5a5ddb484730b52a6e632ffeda385973768bcde1b6c27e3b65fc5a3266b2166</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\system.h</file>
