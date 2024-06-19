@@ -1297,7 +1297,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN1" name="message ID"/>
-         <value>291</value>
+         <value>292</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ECAN1" name="receive buffer mode"/>
@@ -3636,6 +3636,26 @@
          <value>FIFO</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="ECAN1" name="data%1%canFilter"/>
+         <value>Filter 0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="ECAN1" name="data%1%canID"/>
+         <value>0x124</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="ECAN1" name="data%1%canIdType"/>
+         <value>SID</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="ECAN1" name="data%1%canMask"/>
+         <value>Mask 0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="ECAN1" name="data%1%canReceiveBuffer"/>
+         <value>FIFO</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ECAN1" registerAlias="CBUFPNT1"/>
          <value>65535</value>
       </entry>
@@ -3837,7 +3857,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ECAN1" registerAlias="CRXM0SID"/>
-         <value>65504</value>
+         <value>65280</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ECAN1" registerAlias="CRXM1EID"/>
@@ -4665,7 +4685,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CRXM0SID" settingAlias="SID"/>
-         <value>2047</value>
+         <value>2040</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ECAN1" registerAlias="CRXM1EID" settingAlias="EID"/>
@@ -14759,7 +14779,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\can1.c</file>
-         <hash>d6929d1f51aabdc8250cf97d59f15456bed75d9548c8593213527d07a64fb905</hash>
+         <hash>b6c02f16533478917285a965b7c3294f2cf57badd13edac9e00eba9c58015a73</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\can1.h</file>
@@ -14815,7 +14835,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>b750676d522bb4ac8dbaa3d04f6ca00b30c85e333e524c407ef0d1d6d0ebd61a</hash>
+         <hash>c769a66aba5447488a7aa41d0e36ac063887691be1089d432abaf9f2f86cf3c8</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\oc1.c</file>
@@ -14827,7 +14847,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>
-         <hash>a134a9fac6eee42fa04ed78dcbe828b259426fa9cb48d4cba1cedb82ab922e37</hash>
+         <hash>c8e5394d6f49a831dbc5d5910520a5b8f0ead8cd57aa6795fdfc581eb04187ee</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
@@ -14855,7 +14875,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>b5a5ddb484730b52a6e632ffeda385973768bcde1b6c27e3b65fc5a3266b2166</hash>
+         <hash>6d375b5c09e64026d5ef1c747c99b69232eb728ec6caa137e892e8417409c0fc</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\system.h</file>
