@@ -1,0 +1,83 @@
+/*@!Encoding:1252*/
+variables
+{
+  msTimer writeTimer;
+  long glbPeriod = 250;
+
+  dword glbHandle = 0;
+  long glbValue;
+}
+
+on Start
+{
+  char buffer[64];
+  long ret;
+
+  //
+  // Opens the file in ASCII mode for read access.
+  //
+  // To determine the absolute path, the search procedure will be used.
+  // The file must be located in the directory of the databases or the
+  // configuration directory.
+  //
+  glbHandle = OpenFileRead ("Data.Txt",0);
+
+  if ( glbHandle!=0 )
+  {
+    //
+    // got to end of file ...
+    //
+    while ( fileGetString(buffer,elcount(buffer),glbHandle)!=0 ) {};
+    //
+    // Get the last parameters
+    // (saved on disk after the end of the last measurement)
+    //
+    glbValue = atol (buffer);
+    write ("Last value %d.",glbValue);
+    fileClose (glbHandle);
+  }
+  else
+  {
+    write ("File 'Data.Txt' was not opened for read access.");
+  }
+  //
+  // Open the file in ASCII mode for write access.
+  //
+  // The write path was not set using the function setWritePath(), so
+  // the configuration directory will be used instead. This is the
+  // default behavior.
+  //
+  glbHandle = OpenFileWrite ("Data.Txt",2);
+
+  if ( glbHandle!=0 )
+  {
+    setTimer (writeTimer,glbPeriod);
+  }
+  else
+  {
+    write ("File 'Data.Txt' was not opened for write access.");
+  }
+}
+
+on timer writeTimer
+{
+  long randomValue;
+  char buffer [64];
+
+  if ( glbHandle!=0 )
+  {
+    randomValue = random (32767);
+    snprintf (buffer,elcount(buffer)," %d \n",randomValue);
+    filePutString (buffer, elcount(buffer),glbHandle);
+    setTimer (writeTimer,glbPeriod);
+  }
+  else
+  {
+    write ("Error, invalid file handle.");
+  }
+}
+
+on StopMeasurement
+{
+  fileClose (glbHandle);
+}

@@ -1,0 +1,73 @@
+/*@!Encoding:1252*/
+includes
+{
+ 
+  #include "immagine.cin"
+}
+
+variables
+{
+  
+  message 0x11 myMessage;
+  int i;
+  msTimer timer1;
+  byte buffer[1]; 
+  int j=0;
+  int ultimoMessaggioInviato = 0; // Flag per gestire la fine dell'invio, 0 = false, 1 = true
+
+  
+  
+}
+
+on start
+{
+  
+       setTimer(timer1,10);
+         myMessage.dlc = 8;
+}
+
+on timer timer1
+{
+  if (!ultimoMessaggioInviato) {
+        if (i < elCount(bertone256x35)) {
+            // Invio dell'array in blocchi di 8 byte
+            for ( j = 0; j < 8; j++) {
+                if (i + j < elCount(bertone256x35)) {
+                    myMessage.byte(j) = bertone256x35[i + j];
+                } else {
+                    myMessage.byte(j) = 0; // Riempi gli eventuali spazi vuoti con zero
+                }
+            }
+            // Controlla se è il ciclo finale
+            if (i + 8 >= elCount(bertone256x35)) {
+                myMessage.id = 0x123; // ID per l'ultimo messaggio
+                ultimoMessaggioInviato = 1; // Imposta il flag per non ripetere il ciclo
+            } else {
+                myMessage.id = 0x11; // ID standard per tutti gli altri messaggi
+                setTimer(timer1, 10); // Ripristina il timer solo se non è l'ultimo messaggio
+            }
+            output(myMessage);
+            write("Messaggio inviato: ID %X da %d a %d", myMessage.id, i, i + 7);
+            i += 8; // Incrementa i per il prossimo blocco di dati
+        }
+    } else {
+        cancelTimer(timer1); // Cancella il timer una volta inviato l'ultimo messaggio
+        write("Tutti i messaggi sono stati inviati.");
+    }
+}
+
+void sendCANMessage(char data[], int size)
+{
+   write("sendCANmessage");
+           // Creazione di un messaggio CAN
+  myMessage.id = 0x123;        // ID del messaggio CAN
+  myMessage.dlc = size;        // Imposta il DLC a seconda dei byte letti
+  for ( i = 0; i < size; ++i)
+  {
+    myMessage.byte(i) = data[i]; // Assegna i dati ai byte del messaggio
+  }
+  
+  output(myMessage);           // Trasmetti il messaggio
+}
+
+

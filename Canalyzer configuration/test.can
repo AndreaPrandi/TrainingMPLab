@@ -1,0 +1,151 @@
+/*@!Encoding:1252*/
+variables
+{
+    message 0x123 msgMotorStatus;
+    int speed= 0;
+    int rpm;
+    char signalName[20];
+    mstimer accelerate;
+    mstimer brake;
+    
+    message 0x122 msgBatteryStatus;
+    int ambientTemp;
+    int targetSpeed = 100; // Velocità target per l'accelerazione
+    message 0x10 canMessage;  // Dichiarazione di un messaggio CAN
+
+}
+
+on start
+{
+    // Inizializzazione delle variabili
+    speed = 0;
+    rpm = 0;
+    setTimer(accelerate, 100); // Imposta un timer per iniziare l'accelerazione
+   
+}
+
+on sysvar `sysVar::ButtonSendMsg
+
+{
+  
+    // Legge i valori dalle variabili di sistema
+    speed = sysGetVariableInt("sysVar", "speed");
+    rpm = sysGetVariableInt("sysVar", "rpm");
+
+    // Costruisce e invia il messaggio CAN
+    msgMotorStatus.Speed = speed;
+    msgMotorStatus.rpm = rpm;
+    output(msgMotorStatus);
+}
+
+on sysvar `sysVar::ButtonTemp
+{
+   ambientTemp = sysGetVariableInt("sysVar", "temperature");
+  msgBatteryStatus.temperature= ambientTemp;
+
+  // Logica per MsgMotorStatus basata sulla temperatura
+  if (ambientTemp < 0) // Condizioni di bassa temperatura
+  {
+    msgMotorStatus.rpm = msgMotorStatus.rpm * 0.9; // Supponiamo una riduzione dell'efficienza del motore
+    output(msgMotorStatus);
+    write("RPM ridotti del 10%% a causa della bassa temperatura di %d gradi.", ambientTemp);
+  }
+  else if (ambientTemp > 30) // Condizioni di alta temperatura
+  {
+    msgMotorStatus.rpm = msgMotorStatus.rpm * 1.1; // Supponiamo un aumento dell'efficienza o sovraccarico
+    output(msgMotorStatus);
+    write("RPM aumentati del 10%% a causa dell'alta temperatura di %d gradi.", ambientTemp);
+  }
+
+  // Logica per MsgBatteryStatus basata sulla temperatura
+  if (ambientTemp < 0)
+  {
+    msgBatteryStatus.voltage = msgBatteryStatus.voltage * 0.8; // Effetto della bassa temperatura sulla batteria
+    output(msgBatteryStatus);
+    write("Tensione della batteria ridotta del 20%% a causa della bassa temperatura.");
+  }
+  else if (ambientTemp > 30)
+  {
+    msgBatteryStatus.voltage = msgBatteryStatus.voltage * 1.2; // Potenziale rischio di sovraccarico a causa del calore
+    output(msgBatteryStatus);
+    write("Tensione della batteria aumentata del 20%% per compensare l'alta temperatura.");
+  }
+}
+
+on timer accelerate
+  
+{
+  
+    if (speed < targetSpeed) {
+      
+        speed += 5; // Incrementa la velocità
+        rpm += 100; // Incrementa gli RPM
+        msgMotorStatus.Speed = speed;
+        msgMotorStatus.rpm = rpm;
+        output(msgMotorStatus);
+       setTimer(accelerate, 200); // Imposta un timer per iniziare l'accelerazione
+    } else {
+        cancelTimer(accelerate); // Ferma il timer
+        write("Target di 100 km/h raggiunto.");
+    }
+}
+
+on sysvar `sysVar::ButtonBrake
+{
+    cancelTimer(accelerate); // Ferma il timer
+    setTimer(brake, 100); // Imposta un timer per iniziare la frenata
+}
+
+on timer brake
+{
+   
+    if (speed > 0) {
+      
+        speed -= 5; // Decrementa la velocità
+        rpm -= 100; // Decrementa gli RPM
+        msgMotorStatus.Speed = speed;
+        msgMotorStatus.rpm = rpm;
+        output(msgMotorStatus);
+        setTimer(brake, 100); // Imposta un timer per iniziare la frenata
+    } else {
+        cancelTimer(brake); // Ferma il timer
+        write("Veicolo completamente fermato.");
+    }
+}
+
+on sysvar `sysVar::ButtonAccelerate
+{
+  cancelTimer(brake); // Ferma il timer
+  setTimer(accelerate, 200); // Imposta un timer per iniziare l'accelerazione
+
+}
+
+on key 'g'
+{
+  write("Tasto 'g' premuto.");
+  canMessage.dlc=1;
+  canMessage.byte(0)=1;
+  output(canMessage);
+  write("Messaggio CAN con ID 0x10 inviato.");
+  
+}
+
+on key 'b'
+{
+  write("Tasto 'b' premuto.");
+  canMessage.dlc=1;
+  canMessage.byte(0)=2;
+  output(canMessage);
+  write("Messaggio CAN con ID 0x10 inviato.");
+  
+}
+
+on key 's'
+{
+  write("Tasto 's' premuto.");
+  canMessage.dlc=1;
+  canMessage.byte(0)=0;
+  output(canMessage);
+  write("Messaggio CAN con ID 0x10 inviato.");
+  
+}
