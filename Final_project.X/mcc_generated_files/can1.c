@@ -18,9 +18,9 @@ volatile bool drawImageFlag = false;
 volatile bool drawExtImg=false;
 volatile bool drawBertone=false;
 uint16_t currentImageIndex = 0;
-//uint8_t immaginebuffer[8192]; // Assicurati che SIZE sia la dimensione corretta
+uint8_t immaginebuffer[6500]; // Assicurati che SIZE sia la dimensione corretta
 
-#define FRAME_BUFFER_SIZE 4480  // Adatta questa dimensione al tuo specifico display e formato dell'immagine
+#define FRAME_BUFFER_SIZE 8200  // Adatta questa dimensione al tuo specifico display e formato dell'immagine
 
 uint16_t buffer_index = 0;
 volatile bool image_complete = false;
@@ -909,7 +909,7 @@ void MyRxBufferInterruptHandler(void)
 {   
     uint16_t msgId;
     uint8_t data[8];
-    uint8_t dataLength;
+    uint8_t dataLength=8 ;
 
     CAN_MSG_OBJ receivedMsg;
     uint8_t receivedData[8];
@@ -942,7 +942,39 @@ void MyRxBufferInterruptHandler(void)
             drawImageFlag=false;
             }
               
-        }}}
+        }else if (receivedMsg.msgId == 0x11  && !image_complete){
+               
+                if ((buffer_index + dataLength) <= FRAME_BUFFER_SIZE) {
+                    for (int i = 0; i < dataLength; i++) {
+            // Mappa ogni byte a un indice unico nel buffer
+            // Assicurati che buffer_index + i non superi la dimensione del buffer
+                   if (buffer_index + i < FRAME_BUFFER_SIZE) {
+                    immaginebuffer[buffer_index + i] = receivedMsg.data[i];
+            }
+        }
+        buffer_index += dataLength;  // Aggiorna buffer_index per il prossimo messaggio
+        drawExtImg = true;  // Imposta il flag per disegnare l'immagine
+            }
+             
+            }
+        else if ( receivedMsg.msgId== 0x124) {
+        
+        for (int i = 0; i < dataLength; i++) {
+            // Mappa ogni byte a un indice unico nel buffer
+            // Assicurati che buffer_index + i non superi la dimensione del buffer
+            if (buffer_index + i < FRAME_BUFFER_SIZE) {
+                immaginebuffer[buffer_index + i] = receivedMsg.data[i];
+            }
+        }
+        buffer_index += dataLength;  // Aggiorna buffer_index per il prossimo messaggio
+    
+    image_complete = true;
+    drawExtImg = true;
+        
+        }
+
+    
+    }}
         
         
         

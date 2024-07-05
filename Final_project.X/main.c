@@ -35,7 +35,7 @@ int main(void) {
     SYSTEM_Initialize();
     CAN1_TransmitEnable();
     CAN1_ReceiveEnable();
-    extern uint8_t immaginebuffer[];
+    
 
    // CAN1_OperationModeSet(CAN_CONFIGURATION_MODE);
     // Imposta altre configurazioni specifiche qui
@@ -44,12 +44,19 @@ int main(void) {
      CAN_TX_MSG_REQUEST_STATUS dati;
      uint8_t frame_buffer[8192] = {0};
      select_font(&FreeMono12pt7b);
-   
-       char text1[15];  // Crea un buffer per la stringa del primo byte
-       char text2[15];  // Crea un buffer per la stringa del secondo byte
-    uint8_t messageData[1] = {56};
+
+      if (immaginebuffer == NULL) {
+          led3_SetHigh();
+           fill_buffer(frame_buffer, 0x00);
+          draw_text(frame_buffer, "error memory allocation", 10, 20, 0x0F);  // Posizione e luminositï¿½ possono essere aggiustate
+           send_buffer_to_OLED(frame_buffer, 0, 0);
+          DELAY_milliseconds(5000);
+    }
+    uint8_t text1[15] ;
+    uint8_t text2[15] ;
+   uint8_t messageData[1] = {20};
     dati = SendCANMessage(22, messageData, sizeof(messageData));
-      fill_buffer(frame_buffer, 0x00);
+        fill_buffer(frame_buffer, 0x00);
         draw_bitmap_4bpp(frame_buffer, bertone256x35, 0, 15, 256, 35);
         send_buffer_to_OLED(frame_buffer, 0, 0);
         DELAY_milliseconds(500);
@@ -60,7 +67,7 @@ int main(void) {
         DELAY_milliseconds(500);
 
         fill_buffer(frame_buffer, 0x00);
-        sprintf(text1, "Veloa: %d", 0);  // Correct
+        sprintf(text1, "Velocita: %d", 0);  // Correct
         draw_text(frame_buffer, text1, 10, 20, 0x0F);  // Posizione e luminositï¿½ possono essere aggiustate
         sprintf(text2, "rpm: %d", 0);  // Correct
         draw_text(frame_buffer, text2, 10, 50, 0x0F);  // Posizione e luminositï¿½ possono essere aggiustate
@@ -87,7 +94,7 @@ int main(void) {
             DELAY_milliseconds(500);  
            } else if (image_complete==true) {
               fill_buffer(frame_buffer, 0x00);
-              //draw_bitmap_4bpp(frame_buffer,immaginebuffer,0,0,256,35);
+              draw_bitmap_4bpp(frame_buffer,immaginebuffer,0,0,256,35);
               send_buffer_to_OLED(frame_buffer, 0, 0);
               DELAY_milliseconds(500); 
               dati = SendCANMessage(22, messageData, sizeof(messageData));
@@ -97,17 +104,17 @@ int main(void) {
         else{
             
          fill_buffer(frame_buffer, 0x00);
-         dati = SendCANMessage(8, messageData, sizeof(messageData));
+         dati = SendCANMessage(48, messageData, sizeof(messageData));
 
         static uint8_t messageData[1] = {56};
         CAN_TX_MSG_REQUEST_STATUS dati;
 
         draw_rect_filled(frame_buffer, 10, 0, 250, 20, 0x00);
-        sprintf(text1, "Veloa: %d", speed);
+        sprintf(text1, "Velocita: %d", speed);
         draw_text(frame_buffer, text1, 10, 20, 0x0F);
       
-        dati = SendCANMessage(12, messageData, sizeof(messageData));
-        led2_Toggle();
+        dati = SendCANMessage(22, messageData, sizeof(messageData));
+        led1_Toggle();
 
         draw_rect_filled(frame_buffer, 10, 35, 250, 64, 0x00);
         sprintf(text2, "rpm: %d", rpm);

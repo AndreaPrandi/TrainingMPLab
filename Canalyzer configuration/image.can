@@ -7,7 +7,8 @@ includes
 
 variables
 {
-  
+  message 0x10 canMessage;  // Dichiarazione di un messaggio CAN
+
   message 0x11 myMessage;
   int i;
   msTimer timer1;
@@ -40,11 +41,11 @@ on timer timer1
             }
             // Controlla se è il ciclo finale
             if (i + 8 >= elCount(bertone256x35)) {
-                myMessage.id = 0x123; // ID per l'ultimo messaggio
+                myMessage.id = 0x124; // ID per l'ultimo messaggio
                 ultimoMessaggioInviato = 1; // Imposta il flag per non ripetere il ciclo
             } else {
                 myMessage.id = 0x11; // ID standard per tutti gli altri messaggi
-                setTimer(timer1, 10); // Ripristina il timer solo se non è l'ultimo messaggio
+                setTimer(timer1, 30); // Ripristina il timer solo se non è l'ultimo messaggio
             }
             output(myMessage);
             write("Messaggio inviato: ID %X da %d a %d", myMessage.id, i, i + 7);
@@ -56,18 +57,14 @@ on timer timer1
     }
 }
 
-void sendCANMessage(char data[], int size)
+on key 's'
 {
-   write("sendCANmessage");
-           // Creazione di un messaggio CAN
-  myMessage.id = 0x123;        // ID del messaggio CAN
-  myMessage.dlc = size;        // Imposta il DLC a seconda dei byte letti
-  for ( i = 0; i < size; ++i)
-  {
-    myMessage.byte(i) = data[i]; // Assegna i dati ai byte del messaggio
-  }
+  write("Tasto 's' premuto.");
+  canMessage.dlc=1;
+  canMessage.byte(0)=0;
+  output(canMessage);
+  write("Messaggio CAN con ID 0x10 inviato.");
   
-  output(myMessage);           // Trasmetti il messaggio
 }
 
 
