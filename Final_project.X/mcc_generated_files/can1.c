@@ -930,16 +930,19 @@ void MyRxBufferInterruptHandler(void)
         {
             if(receivedMsg.data[0]== 1){
             drawBertone = false;
-            drawImageFlag = true;  
+            drawImageFlag = true;
+            image_complete=false;
             }else if (receivedMsg.data[0] == 2)
         {
             drawBertone=true;
             drawImageFlag=false;
+            image_complete=false;
         }
             else if (receivedMsg.data[0] == 0)
             {
             drawBertone=false;
             drawImageFlag=false;
+            image_complete=false;
             }
               
         }else if (receivedMsg.msgId == 0x11  && !image_complete){
