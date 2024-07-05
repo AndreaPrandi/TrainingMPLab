@@ -1,53 +1,31 @@
-/**
-  CAN1 Generated Driver File
-
-  @Company
-    Microchip Technology Inc.
-
-  @File Name
-    can1.c
-
-  @Summary
-    This is the generated driver implementation file for the CAN1 driver using PIC24 / dsPIC33 / PIC32MM MCUs
-
-  @Description
-    This source file provides APIs for CAN1.
-    Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.4
-        Device            :  dsPIC33EV256GM106
-    The generated drivers are tested against the following:
-        Compiler          :  XC16 v2.10
-        MPLAB 	          :  MPLAB X v6.05
-*/
-
-/*
-    (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
-    software and any derivatives exclusively with Microchip products.
-
-    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
-    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
-    WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
-    PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
-    WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
-
-    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
-    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
-    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
-    BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
-    FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
-    ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
-    THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-
-    MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
-    TERMS.
-*/
-
-/**
-  Section: Included Files
-*/
-
 #include "can1.h"
 #include "dma.h"
+#include <stdio.h>
+#include "system.h"
+#include "../SSD1322_OLED_lib/SSD1322_API.h"
+#include "../SSD1322_OLED_lib/SSD1322_GFX.h"
+#include "../SSD1322_OLED_lib/SSD1322_HW_Driver.h"
+#include "delay.h"
+#include "../global.h"
+#include "pin_manager.h"
+#include <stdbool.h>
+#include <stdint.h>
+#include <string.h>
+#include "can_messages.h"
+volatile uint8_t speed = 0;
+volatile uint8_t rpm = 0;
+volatile bool drawImageFlag = false;
+volatile bool drawExtImg=false;
+volatile bool drawBertone=false;
+uint16_t currentImageIndex = 0;
+//uint8_t immaginebuffer[8192]; // Assicurati che SIZE sia la dimensione corretta
+
+#define FRAME_BUFFER_SIZE 4480  // Adatta questa dimensione al tuo specifico display e formato dell'immagine
+
+uint16_t buffer_index = 0;
+volatile bool image_complete = false;
+
+
 
 #define CAN1_TX_DMA_CHANNEL DMA_CHANNEL_0
 #define CAN1_RX_DMA_CHANNEL DMA_CHANNEL_1
@@ -90,9 +68,15 @@ static unsigned int can1msgBuf [CAN1_MESSAGE_BUFFERS][8] __attribute__((aligned(
 /******************************************************************************/
 static void CAN1_DMACopy(uint8_t buffer_number, CAN_MSG_OBJ *message);
 static void CAN1_MessageToBuffer(uint16_t* buffer, CAN_MSG_OBJ *message);
+void MyRxBufferInterruptHandler(void);
 
 // CAN1 Default Interrupt Handler
+static void (*CAN1_BusErrorHandler)(void) = NULL;
+static void (*CAN1_TxErrorPassiveHandler)(void) = NULL;
+static void (*CAN1_RxErrorPassiveHandler)(void) = NULL;
 static void (*CAN1_BusWakeUpActivityInterruptHandler)(void) = NULL;
+static void (*CAN1_RxBufferInterruptHandler)(void) = NULL;
+static void (*CAN1_RxBufferOverFlowInterruptHandler)(void) = NULL;
 
 /**
  Section: Private Function Definitions
@@ -198,13 +182,13 @@ static void CAN1_MessageToBuffer(uint16_t* buffer, CAN_MSG_OBJ* message)
     {
         buffer[0]= ((message->msgId & 0x000007FF) << 2) + ((uint16_t)(message->field.frameType << 1) & 0x0002);
         buffer[1]= 0;
-        buffer[2]= message->field.dlc & 0x0F;
+        buffer[2]= (message->field.dlc & 0x0F);
     }
     else
     {
         buffer[0]= ( ( (uint16_t)(message->msgId >> 16 ) & 0x1FFC ) ) | 0x3;
         buffer[1]= (uint16_t)(message->msgId >> 6) & 0x0FFF;
-        buffer[2]= (message->field.dlc & 0x0F) + ( (uint16_t)(message->msgId << 10) & 0xFC00) + ((uint16_t)(message->field.frameType << 9) & 0x0200);
+        buffer[2]= (message->field.dlc & 0x0F) + ((uint16_t)(message->msgId << 10) & 0xFC00) + ((uint16_t)(message->field.frameType << 9) & 0x0200);
     }
 
     if(message->data != NULL)
@@ -248,7 +232,7 @@ void CAN1_Initialize(void)
     C1FMSKSEL1bits.F0MSK = 0x0; //Select Mask 0 for Filter 0
     
     /* Configure the masks */
-    C1RXM0SIDbits.SID = 0x7f8; 
+    C1RXM0SIDbits.SID = 0x6c8; 
     C1RXM1SIDbits.SID = 0x0; 
     C1RXM2SIDbits.SID = 0x0; 
     
@@ -313,10 +297,26 @@ void CAN1_Initialize(void)
     while(C1CTRL1bits.OPMODE != CAN_NORMAL_OPERATION_MODE);	
 
     /* Initialize Interrupt Handler*/
+    CAN1_SetBusErrorHandler(&CAN1_DefaultBusErrorHandler);
+    CAN1_SetTxErrorPassiveHandler(&CAN1_DefaultTxErrorPassiveHandler);
+    CAN1_SetRxErrorPassiveHandler(&CAN1_DefaultRxErrorPassiveHandler);
     CAN1_SetBusWakeUpActivityInterruptHandler(&CAN1_DefaultBusWakeUpActivityHandler);
-
+    CAN1_SetRxBufferInterruptHandler(&MyRxBufferInterruptHandler);
+    CAN1_SetRxBufferOverFlowInterruptHandler(&CAN1_DefaultRxBufferOverFlowHandler); 
+    
     /* Enable CAN1 Interrupt */
     IEC2bits.C1IE = 1;
+
+    /* Enable Receive interrupt */
+    C1INTEbits.RBIE = 1;
+	
+    /* Enable Error interrupt*/
+    C1INTEbits.ERRIE = 1;
+
+    /* Enable Receive buffer Overflow interrupt */
+    C1INTEbits.RBOVIE = 1;
+
+    
 }
 
 void CAN1_TransmitEnable()
@@ -390,7 +390,7 @@ CAN_TX_MSG_REQUEST_STATUS CAN1_Transmit(CAN_TX_PRIOIRTY priority, CAN_MSG_OBJ *s
     {
        txMsgStatus |= CAN_TX_MSG_REQUEST_DLC_ERROR;
     }
-    
+
     if(CAN1_TX_BUFFER_COUNT > 0)
     {
         for(i=0; i<CAN1_TX_BUFFER_COUNT; i++)
@@ -432,14 +432,20 @@ bool CAN1_Receive(CAN_MSG_OBJ *recCanMsg)
     if(C1INTFbits.RBOVIF == 1)
     {
         C1INTFbits.RBOVIF = 0;
+        /* Receive buffer overflow occured, call the notification function */
+        if(CAN1_RxBufferOverFlowInterruptHandler)
+        {
+            CAN1_RxBufferOverFlowInterruptHandler();
+        }
+
         return messageReceived;
     }
-
+    
     if(recCanMsg->data == NULL)
     {
         return messageReceived;
     }
-    
+
     currentBuffer = C1FIFObits.FNRB;
     if( currentBuffer < 16)
     {
@@ -571,9 +577,39 @@ void CAN1_Sleep(void)
     //Wake up from sleep should set the CAN1 module straight into Normal mode
 }
 
+void __attribute__((weak)) CAN1_DefaultBusErrorHandler(void) 
+{
+    CAN1_CallbackBusOff();
+}
+
+void CAN1_SetBusErrorHandler(void *handler)
+{
+    CAN1_BusErrorHandler = handler;
+}
+
+void __attribute__((weak)) CAN1_DefaultTxErrorPassiveHandler(void) 
+{
+    CAN1_CallbackTxErrorPassive();
+}
+
+void CAN1_SetTxErrorPassiveHandler(void *handler)
+{
+    CAN1_TxErrorPassiveHandler = handler;
+}
+
+void __attribute__((weak)) CAN1_DefaultRxErrorPassiveHandler(void) 
+{
+    CAN1_CallbackRxErrorPassive();
+}
+
+void CAN1_SetRxErrorPassiveHandler(void *handler)
+{
+    CAN1_RxErrorPassiveHandler = handler;
+}
+
 void __attribute__((weak)) CAN1_DefaultBusWakeUpActivityHandler(void) 
 {
-
+    
 }
 
 void CAN1_SetBusWakeUpActivityInterruptHandler(void *handler)
@@ -581,20 +617,73 @@ void CAN1_SetBusWakeUpActivityInterruptHandler(void *handler)
     CAN1_BusWakeUpActivityInterruptHandler = handler;
 }
 
+void __attribute__((weak)) CAN1_DefaultReceiveBufferHandler(void) 
+{
+    CAN1_CallbackMessageReceived();
+}
+
+void CAN1_SetRxBufferInterruptHandler(void *handler)
+{
+    CAN1_RxBufferInterruptHandler = handler;
+}
+
+void __attribute__((weak)) CAN1_DefaultRxBufferOverFlowHandler(void) 
+{
+    CAN1_CallbackRxBufferOverflow();
+}
+
+void CAN1_SetRxBufferOverFlowInterruptHandler(void *handler)
+{
+    CAN1_RxBufferOverFlowInterruptHandler = handler;
+}
+
 void __attribute__((__interrupt__, no_auto_psv)) _C1Interrupt(void)
 {
-    if(C1INTFbits.WAKIF)
+    if (C1INTFbits.ERRIF)
     {
-        if(CAN1_BusWakeUpActivityInterruptHandler)
+        if (C1INTFbits.TXBO == 1)
         {
-            CAN1_BusWakeUpActivityInterruptHandler();
+            if(CAN1_BusErrorHandler)
+            {
+                CAN1_BusErrorHandler();
+            }
         }
-	
-        C1INTFbits.WAKIF = 0;
+        
+        if (C1INTFbits.TXBP == 1)
+        {
+            if(CAN1_TxErrorPassiveHandler)
+            {
+                CAN1_TxErrorPassiveHandler();
+            }
+        }
+
+        if (C1INTFbits.RXBP == 1)
+        {
+            if(CAN1_RxErrorPassiveHandler)
+            {
+                CAN1_RxErrorPassiveHandler();
+            }
+        }
+
+        /* Call error notification function */
+        C1INTFbits.ERRIF = 0;
     }
-    
+
+    if(C1INTFbits.RBIF)
+    {
+        if(CAN1_RxBufferInterruptHandler)
+        {
+            CAN1_RxBufferInterruptHandler();
+        }
+                
+        C1INTFbits.RBIF = 0;  
+    } 
+        
+   
     IFS2bits.C1IF = 0;
 }
+
+
 
 /*******************************************************************************
 
@@ -790,6 +879,73 @@ void CAN1_sleep(void)
     //Wake up from sleep should set the CAN1 module straight into Normal mode
 }
 
-/**
- End of File
-*/
+/* Null weak implementations of callback functions. */
+void __attribute__((weak)) CAN1_CallbackBusOff(void)
+{
+
+}
+
+void __attribute__((weak)) CAN1_CallbackTxErrorPassive(void)
+{
+
+}
+
+void __attribute__((weak)) CAN1_CallbackRxErrorPassive(void)
+{
+
+}
+
+void __attribute__((weak)) CAN1_CallbackMessageReceived(void)
+{
+
+}
+
+void __attribute__((weak)) CAN1_CallbackRxBufferOverflow()
+{
+
+}
+
+void MyRxBufferInterruptHandler(void)
+{   
+    uint16_t msgId;
+    uint8_t data[8];
+    uint8_t dataLength;
+
+    CAN_MSG_OBJ receivedMsg;
+    uint8_t receivedData[8];
+    receivedMsg.data = receivedData;
+
+    if (CAN1_Receive(&receivedMsg))
+    {
+        if (receivedMsg.msgId == CAN_ID_Auto)
+        {
+            CAN_Auto msg;
+            decode_CAN_Auto(&msg, receivedMsg.data);
+            speed = msg.Speed;
+            rpm = msg.rpm;
+
+            
+        }
+        else if (receivedMsg.msgId == 0x10)  // Assumi che 100 sia l'ID del messaggio
+        {
+            if(receivedMsg.data[0]== 1){
+            drawBertone = false;
+            drawImageFlag = true;  
+            }else if (receivedMsg.data[0] == 2)
+        {
+            drawBertone=true;
+            drawImageFlag=false;
+        }
+            else if (receivedMsg.data[0] == 0)
+            {
+            drawBertone=false;
+            drawImageFlag=false;
+            }
+              
+        }}}
+        
+        
+        
+        
+        
+

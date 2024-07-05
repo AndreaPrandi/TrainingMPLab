@@ -108,27 +108,27 @@
 #include "clock.h"
 #include "system.h"
 #include "system_types.h"
-#include "tmr1.h"
-#include "tmr2.h"
-#include "delay.h"
 #include "dma.h"
-#include "can1.h"
 #include "oc1.h"
-#include "spi1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
+#include "tmr1.h"
+#include "tmr2.h"
+#include "can1.h"
+#include "spi1.h"
+#include "delay.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    CLOCK_Initialize();
     INTERRUPT_Initialize();
+    CLOCK_Initialize();
     SPI1_Initialize();
     OC1_Initialize();
     CAN1_Initialize();
     TMR2_Initialize();
-    TMR1_Initialize();
     DMA_Initialize();
+    TMR1_Initialize();
     INTERRUPT_GlobalEnable();
     SYSTEM_CORCONModeOperatingSet(CORCON_MODE_PORVALUES);
 }
