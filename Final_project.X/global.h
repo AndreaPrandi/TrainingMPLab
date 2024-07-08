@@ -13,7 +13,10 @@ extern volatile bool drawBertone;
 extern uint8_t immaginebuffer[];
 extern volatile bool drawExtImg;
 extern volatile bool image_complete;
-
+extern volatile uint8_t x_image;
+extern volatile uint8_t y_image;
+extern volatile uint16_t length;
+extern volatile uint8_t height;
 #define CAN_ID_AUTO 0x123
 typedef struct {
     uint8_t Speed;

@@ -19,6 +19,10 @@ volatile bool drawExtImg=false;
 volatile bool drawBertone=false;
 uint16_t currentImageIndex = 0;
 uint8_t immaginebuffer[6500]; // Assicurati che SIZE sia la dimensione corretta
+volatile uint8_t x_image=0;
+volatile uint8_t y_image=0;
+volatile uint16_t length=0;
+volatile uint8_t height=2;
 
 #define FRAME_BUFFER_SIZE 8200  // Adatta questa dimensione al tuo specifico display e formato dell'immagine
 
@@ -974,7 +978,15 @@ void MyRxBufferInterruptHandler(void)
     image_complete = true;
     drawExtImg = true;
         
+        }else if ( receivedMsg.msgId== 0x125) {
+            x_image=receivedMsg.data[0];
+            y_image= receivedMsg.data[1];
+            length= (receivedMsg.data[3] << 8) | receivedMsg.data[2];
+            height= receivedMsg.data[4];
+        
         }
+        
+        
 
     
     }}

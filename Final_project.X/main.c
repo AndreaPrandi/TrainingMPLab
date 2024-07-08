@@ -94,7 +94,7 @@ int main(void) {
             DELAY_milliseconds(500);  
            } else if (image_complete==true) {
               fill_buffer(frame_buffer, 0x00);
-              draw_bitmap_4bpp(frame_buffer,immaginebuffer,0,0,256,35);
+              draw_bitmap_4bpp(frame_buffer,immaginebuffer,x_image,y_image,length,height);
               send_buffer_to_OLED(frame_buffer, 0, 0);
               DELAY_milliseconds(500); 
               dati = SendCANMessage(22, messageData, sizeof(messageData));
